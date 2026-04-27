@@ -1,0 +1,15 @@
+# Local-only Python tooling — never deploys
+tools/
+workflows/
+.tmp/
+
+# Secrets + dev
+.env
+.env.example
+.env.local
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

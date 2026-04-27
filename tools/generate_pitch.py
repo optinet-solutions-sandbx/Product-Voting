@@ -68,7 +68,7 @@ def lazy_load_dotenv() -> None:
     try:
         from dotenv import load_dotenv
     except ImportError:
-        die("python-dotenv missing. Run: pip install -r requirements.txt")
+        die("python-dotenv missing. Run: pip install -r tools/requirements.txt")
     load_dotenv(ROOT / ".env")
 
 
@@ -170,7 +170,7 @@ def generate_with_gemini(prompt: str, reference_path: Path) -> bytes:
         from google import genai
         from google.genai import types
     except ImportError:
-        die("google-genai missing. Run: pip install -r requirements.txt")
+        die("google-genai missing. Run: pip install -r tools/requirements.txt")
 
     model = os.getenv("GEMINI_IMAGE_MODEL", "gemini-2.5-flash-image-preview").strip()
     print(f"  - Gemini provider - model: {model}", file=sys.stderr)
@@ -205,7 +205,7 @@ def generate_with_openai(prompt: str, reference_path: Path) -> bytes:
     try:
         from openai import OpenAI
     except ImportError:
-        die("openai missing. Run: pip install -r requirements.txt")
+        die("openai missing. Run: pip install -r tools/requirements.txt")
 
     model = os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1").strip()
     print(f"  - OpenAI provider - model: {model}", file=sys.stderr)
