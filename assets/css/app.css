@@ -295,6 +295,9 @@ button {
   grid-template-columns: 220px 1fr;
   gap: 3rem;
   align-items: start;
+  /* Defer layout/paint of offscreen submitter blocks for faster initial render. */
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
 }
 @media (max-width: 920px) {
   .submitter { grid-template-columns: 1fr; gap: 1.75rem; }
@@ -1824,6 +1827,26 @@ button {
   border: 1px solid var(--line-strong);
   background: var(--ink-2);
   box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.8);
+  transition: opacity 0.25s var(--transition);
+}
+.lightbox[data-loading="true"] .lightbox-img { opacity: 0.25; }
+.lightbox[data-loading="true"] .lightbox-frame::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border: 2px solid rgba(212, 168, 90, 0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: lightboxSpin 0.85s linear infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+@keyframes lightboxSpin {
+  to { transform: rotate(360deg); }
 }
 .lightbox-meta {
   display: flex;

@@ -28,10 +28,14 @@
      ------------------------------------------------------------------ */
   function openLightbox(src, title, tag) {
     const lb = document.getElementById("lightbox");
-    document.getElementById("lightbox-img").src = src;
+    const img = document.getElementById("lightbox-img");
     document.getElementById("lightbox-title").textContent = title || "";
     document.getElementById("lightbox-tag").textContent = tag || "";
     lb.dataset.open = "true";
+    lb.dataset.loading = "true";
+    img.onload = () => { lb.dataset.loading = "false"; };
+    img.onerror = () => { lb.dataset.loading = "false"; };
+    img.src = src;
     document.body.style.overflow = "hidden";
   }
   function closeLightbox() {
@@ -146,12 +150,21 @@
 
     root.innerHTML = `<div class="results-grid">${cards}</div>`;
 
-    /* Wire lightbox triggers */
+    /* Wire lightbox triggers + hover preload */
     document.querySelectorAll("[data-zoom]").forEach(el => {
       el.addEventListener("click", evt => {
         evt.preventDefault();
         openLightbox(el.dataset.zoom, el.dataset.zoomTitle, el.dataset.zoomTag);
       });
+      let preloaded = false;
+      const prefetch = () => {
+        if (preloaded) return;
+        preloaded = true;
+        const img = new Image();
+        img.src = el.dataset.zoom;
+      };
+      el.addEventListener("mouseenter", prefetch);
+      el.addEventListener("focus", prefetch);
     });
   }
 
