@@ -3,6 +3,9 @@ tools/
 workflows/
 .tmp/
 
+# Internal docs — kept in repo, not served publicly
+WEEKEND_CHALLENGE_IDEAS.md
+
 # Secrets + dev
 .env
 .env.example
