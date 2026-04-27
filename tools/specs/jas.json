@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "jas",
+    "name": "Jas",
+    "role": "Vertical SaaS"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "Procurement Autopilot",
+      "tagline": "WhatsApp-Native Procurement for Independent Restaurants",
+      "category": "Restaurant Tech",
+      "color": "orange",
+      "impact": "High",
+      "description": "Independent restaurants lose 2-3 hours/day texting 5-15 suppliers across WhatsApp, phone, SMS. Nothing gets tracked, prices drift, invoices don't match orders. Procurement Autopilot parses every supplier message into orders, deliveries, invoices, and price-change alerts — suppliers never change anything.",
+      "flow": ["Scrape Restaurants With Multi-Supplier Menus", "Pre-Build Procurement Dashboard", "Forward WhatsApp Threads to AI", "AI Parses & Tracks Daily"],
+      "subject_line": "Your supplier WhatsApp threads, finally tracked.",
+      "delivers": ["AI message parsing across languages", "Order + delivery + invoice tracking", "Price-change alerts", "Supplier set pre-loaded", "Daily margin recovery report"],
+      "wins": ["Daily pain = daily use = low churn", "Mixed-language WhatsApp parsing", "Suppliers don't change behavior", "Independents underserved by enterprise tools", "Recoverable margin is concrete"],
+      "before_label": "WhatsApp + Notebook Chaos",
+      "before_bullets": ["Manager texts 5-15 suppliers daily", "No tracking, prices drift", "Invoices don't match orders", "2-3 hours of margin leaks daily", "Friday surprise on weekly spend"],
+      "after_label": "The Procurement Autopilot Platform",
+      "after_bullets": ["Forward thread = auto-parsed", "Orders, deliveries, invoices, alerts unified", "Price-change notifications instant", "Supplier set pre-loaded on activation", "Recoverable margin visible weekly"],
+      "why_works": "Walk into any independent restaurant at 7 AM — the manager has a notebook open, texting suppliers one by one. That's the addressable market, in plain sight."
+    },
+    {
+      "n": 2,
+      "title": "ClientPortal",
+      "tagline": "Auto-Generated Client Portals for B2B SMBs",
+      "category": "B2B SaaS",
+      "color": "blue",
+      "impact": "High",
+      "description": "Small B2B agencies and consultancies waste 3-5 hrs/week retyping status updates already sent. Clients feeling out of the loop walk to competitors. Branded Client Portal scrapes their site, auto-generates a portal pre-styled to their brand, ships them a demo URL — one-click publish to clients.theirdomain.com.",
+      "flow": ["Scrape SMB Site for Brand Kit", "AI Generates Branded Portal", "Email Demo URL", "One-Click Publish to Subdomain"],
+      "subject_line": "Your clients are asking 'where are we?' — here's their portal.",
+      "delivers": ["Auto-pulled brand kit (colors, logo, type)", "Pre-loaded placeholder projects", "File uploads + status timelines", "Multi-tenant theming engine", "One-click subdomain publishing"],
+      "wins": ["Cold email shows pre-styled portal", "Bigger PSA tools out of price range", "Multi-tenant theming = fast build", "Removes Slack + email duct tape", "Owner sees value before signup"],
+      "before_label": "Slack + Email Duct Tape",
+      "before_bullets": ["Same questions every day", "Owners retype status updates", "3-5 hrs/week of busywork", "Clients feel out of the loop", "Walk to a competitor agency"],
+      "after_label": "The ClientPortal Platform",
+      "after_bullets": ["Pre-styled to their brand", "Pre-loaded sample projects + threads", "One-click publish to subdomain", "Unlimited clients on monthly sub", "Stops retyping forever"],
+      "why_works": "Most alternatives require hours of setup before the buyer sees anything. We send the portal pre-built in their colors — they click and see what their first client would see."
+    },
+    {
+      "n": 3,
+      "title": "SalonGBP",
+      "tagline": "Vertical-Native GBP Manager for Salons & Barbershops",
+      "category": "Local SEO",
+      "color": "green",
+      "impact": "High",
+      "description": "Independent salons have stale GBPs — no posts in 8 months, unanswered customer questions, missing prices. Newer competitors two streets over post weekly and win every 'haircut near me' search. Auto-generates a 30-day refresh: 4 weekly posts, drafted answers, priced services, curated photos. One-click manager-invite, live within an hour.",
+      "flow": ["Scrape Stale Salon Profiles", "AI Generates 30-Day Refresh", "Render Side-by-Side Preview", "One-Click Manager Invite"],
+      "subject_line": "Your competitors post weekly. Yours hasn't in 8 months.",
+      "delivers": ["Vertical-specific content (treatments, seasons)", "4 weekly posts auto-drafted", "Customer Q&A drafted answers", "Priced service catalog", "Curated photo selection"],
+      "wins": ["Vertical content beats generic tools", "Output where customers already search", "One-click manager invite = fastest activation", "No new traffic needed", "Recurring weekly posting"],
+      "before_label": "Stale Salon GBP",
+      "before_bullets": ["No posts in 8+ months", "Customer questions unanswered", "No priced service catalog", "Last photo over a year old", "Active competitors win 'near me'"],
+      "after_label": "The SalonGBP Platform",
+      "after_bullets": ["Weekly posts in salon language", "Drafted answers to every Q", "Complete priced service catalog", "Curated, current photos", "One-click manager-invite activation"],
+      "why_works": "Search 'hair salon near me' in any city — most listings haven't posted in months, are missing prices, and have unanswered questions. That gap is the market."
+    }
+  ]
+}

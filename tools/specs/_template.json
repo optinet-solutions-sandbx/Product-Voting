@@ -1,0 +1,88 @@
+{
+  "person": {
+    "slug": "firstname",
+    "name": "First Last",
+    "role": "Team Member"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "ProductName",
+      "tagline": "One-line subtitle that explains the product",
+      "category": "SaaS",
+      "color": "blue",
+      "impact": "High",
+      "description": "5-6 lines of dark grey description text on the left half. Explain what the product does, what gap it fills, and how AI powers it. Keep concrete and clear.",
+      "flow": [
+        "Step 1 — Scrape Source",
+        "Step 2 — Identify Gap",
+        "Step 3 — AI Builds Solution",
+        "Step 4 — Cold Outreach"
+      ],
+      "subject_line": "Subject line for the cold email pitch",
+      "delivers": [
+        "Auto-generated thing #1",
+        "Real-time thing #2",
+        "AI-powered thing #3",
+        "Integration with X",
+        "Measurable result Y"
+      ],
+      "wins": [
+        "Massive TAM",
+        "High perceived value",
+        "Reuses our stack",
+        "Easy to sell",
+        "One small win pays for itself"
+      ],
+      "before_label": "The old way",
+      "before_bullets": [
+        "Pain point 1",
+        "Pain point 2",
+        "Pain point 3",
+        "Pain point 4"
+      ],
+      "after_label": "The ProductName Platform",
+      "after_bullets": [
+        "Benefit 1",
+        "Benefit 2",
+        "Benefit 3",
+        "Benefit 4"
+      ],
+      "why_works": "One-sentence summary of why the whole loop wins."
+    },
+    {
+      "n": 2,
+      "title": "ProductTwo",
+      "tagline": "...",
+      "category": "...",
+      "color": "green",
+      "description": "...",
+      "flow": ["...", "...", "...", "..."],
+      "subject_line": "...",
+      "delivers": ["...", "...", "...", "...", "..."],
+      "wins": ["...", "...", "...", "...", "..."],
+      "before_label": "...",
+      "before_bullets": ["...", "...", "...", "..."],
+      "after_label": "...",
+      "after_bullets": ["...", "...", "...", "..."],
+      "why_works": "..."
+    },
+    {
+      "n": 3,
+      "title": "ProductThree",
+      "tagline": "...",
+      "category": "...",
+      "color": "orange",
+      "description": "...",
+      "flow": ["...", "...", "...", "..."],
+      "subject_line": "...",
+      "delivers": ["...", "...", "...", "...", "..."],
+      "wins": ["...", "...", "...", "...", "..."],
+      "before_label": "...",
+      "before_bullets": ["...", "...", "...", "..."],
+      "after_label": "...",
+      "after_bullets": ["...", "...", "...", "..."],
+      "why_works": "..."
+    }
+  ]
+}

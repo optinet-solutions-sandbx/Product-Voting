@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineering Weekend Challenge · The €1,000 Prize</title>
+  <meta name="description" content="One thousand euros for the best idea on the table. Cast your vote, claim the night." />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+
+  <main class="prize-stage">
+    <div class="prize-bg" aria-hidden="true"></div>
+
+    <!-- Floating decorative elements -->
+    <div class="float" style="left: 8%; top: 20%; font-size: 5rem; animation: floatY 7s ease-in-out infinite;">€</div>
+    <div class="float" style="right: 12%; top: 18%; font-size: 4rem; animation: floatY2 9s ease-in-out infinite;">★</div>
+    <div class="float" style="left: 18%; bottom: 22%; font-size: 3rem; animation: floatY 11s ease-in-out infinite 1s;">✦</div>
+    <div class="float" style="right: 8%; bottom: 28%; font-size: 6rem; animation: floatY2 8s ease-in-out infinite 0.5s;">€</div>
+    <div class="float float-coin" style="left: 28%; top: 40%; animation: floatY 6s ease-in-out infinite 0.4s;"></div>
+    <div class="float float-coin" style="right: 24%; top: 55%; animation: floatY2 8s ease-in-out infinite 1.2s;"></div>
+    <div class="float float-coin" style="left: 14%; bottom: 12%; animation: floatY 9s ease-in-out infinite 0.8s;"></div>
+
+    <!-- Confetti canvas overlay -->
+    <canvas id="confetti" class="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- Top nav -->
+    <nav class="container prize-nav">
+      <a class="prize-nav-back" href="vote.html">
+        <span class="arrow" style="transform: rotate(180deg)">→</span> Back to ballot
+      </a>
+      <a class="prize-nav-back" href="index.html">Sign out</a>
+    </nav>
+
+    <!-- Hero reveal -->
+    <section class="prize-hero">
+      <span class="prize-eyebrow">The Prize</span>
+      <p class="prize-pretitle">For the idea that ships, sells, and lands the first euro —</p>
+      <div class="prize-amount" id="amount"><sup>€</sup>0</div>
+      <p class="prize-subtitle">One thousand euros. <em style="color:var(--gold);font-style:italic">In cash.</em> Nothing else attached. Paid to the person whose idea becomes a real product and lands the first paying customer.</p>
+      <div class="prize-cta-row">
+        <a href="vote.html" class="prize-cta prize-cta-primary">Cast my ballot <span class="arrow">→</span></a>
+        <button id="retrigger" class="prize-cta prize-cta-ghost">Replay the reveal</button>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>€1,000</span> · top 10 ideas built · 1 first paying customer · 1 winner · <span>€1,000</span> · top 10 ideas built · 1 first paying customer · 1 winner ·&nbsp;
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span>€1,000</span> · top 10 ideas built · 1 first paying customer · 1 winner · <span>€1,000</span> · top 10 ideas built · 1 first paying customer · 1 winner ·&nbsp;
+      </div>
+    </div>
+
+    <!-- The single condition — cash only -->
+    <section class="container spend">
+      <header class="spend-head" style="justify-content: center; text-align: center; flex-direction: column; gap: 0; align-items: center;">
+        <span class="eyebrow">— The only rule —</span>
+        <h2 style="max-width: 22ch; text-align: center; margin: 1rem auto 0;">Cash. <em>Paid in full.</em><br />The day the first invoice clears.</h2>
+        <p style="max-width: 46ch; color: var(--bone-dim); margin: 1.5rem auto 0; text-align: center; font-size: 1rem; line-height: 1.6;">No equity. No vesting. No press release. No t-shirts. One thousand euros, handed to the person whose idea becomes a real product and earns its first paying customer. That's the deal — start to finish.</p>
+      </header>
+    </section>
+
+  </main>
+
+  <script src="assets/js/prize.js"></script>
+</body>
+</html>

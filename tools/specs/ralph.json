@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "ralph",
+    "name": "Ralph",
+    "role": "Local Business Automation"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "RevenueLeak Audit",
+      "tagline": "5-Leak Conversion Audit for Local Businesses",
+      "category": "Local Audit",
+      "color": "orange",
+      "impact": "High",
+      "description": "Most local businesses already get calls, messages, profile views — but lose customers silently due to missed replies, weak profiles, no clear CTA, no follow-up. The audit scans Google Business, Facebook, and public presence; delivers a 5-leak report with exact fixes — €20-50 per audit, €50-150 for done-for-you fixes.",
+      "flow": ["Scan Google Business + FB + Public", "AI Detects Conversion Leaks", "Generate 5-Leak Report", "Optional Done-For-You Fixes"],
+      "subject_line": "I'll show you 3 ways you're currently losing customers — free preview.",
+      "delivers": ["Multi-channel presence audit", "Missed-response detection", "Profile completeness scoring", "AI-generated improvement copy", "5-leak action report"],
+      "wins": ["Direct ROI from existing traffic", "No behavior change required", "No integrations needed", "Value delivered immediately", "Path to recurring SaaS"],
+      "before_label": "Silent Customer Loss",
+      "before_bullets": ["Missed or slow replies", "Weak Google + Facebook profiles", "No clear call-to-action", "No follow-up system in place", "Customers leave without contact"],
+      "after_label": "The RevenueLeak Audit Platform",
+      "after_bullets": ["5 specific leaks identified", "AI-rewritten descriptions", "Improved reply templates", "Simple booking + inquiry flow", "Measurable conversion lift"],
+      "why_works": "They don't need more traffic — they're not converting what they already have. Audit + fix = direct, measurable ROI."
+    },
+    {
+      "n": 2,
+      "title": "AI Phone Agent",
+      "tagline": "24/7 AI Voice Receptionist for Local Services",
+      "category": "Voice AI",
+      "color": "blue",
+      "impact": "High",
+      "description": "Plumbers, electricians, HVAC, dentists frequently miss calls — on-site, busy, unreachable. Each missed call is lost revenue (often €100-500+ jobs). The AI Phone Agent answers instantly, qualifies leads with basic questions, captures details, and books or forwards to the business. €50-150/mo subscription.",
+      "flow": ["Customer Calls Business", "AI Answers + Qualifies", "Captures Details + Books", "Business Receives Structured Lead"],
+      "subject_line": "Quick question — are you able to answer every call that comes in?",
+      "delivers": ["Natural conversational voice", "24/7 instant answer", "Qualifying question framework", "Booking + lead capture", "CRM-ready structured leads"],
+      "wins": ["Missed calls = lost revenue (clear ROI)", "High-value leads (€100-500+)", "Easy-to-understand value prop", "Visible business impact", "Industry-specific scripts on upsell"],
+      "before_label": "Manual Call Handling",
+      "before_bullets": ["Missed calls while on-site", "Voicemail = customer goes elsewhere", "Inconsistent qualification", "No 24/7 coverage without staff", "High-value jobs walking away"],
+      "after_label": "The AI Phone Agent Platform",
+      "after_bullets": ["Instant 24/7 answer", "Consistent lead qualification", "Booking + structured lead capture", "Industry-specific scripts available", "Calendar + CRM integrations"],
+      "why_works": "Missed calls = lost revenue. The AI never sleeps and always qualifies the same way. Clear ROI in week one."
+    },
+    {
+      "n": 3,
+      "title": "ReviewBoost",
+      "tagline": "Consistent 5-Star Review Generation for SMBs",
+      "category": "Reputation",
+      "color": "green",
+      "impact": "Medium",
+      "description": "Businesses know reviews matter, but they forget to ask, requests are inconsistent, happy customers leave without leaving a review. The system generates a direct review link + QR code, ready-to-use templates, and AI-personalized timed follow-ups. €5-20/mo or €20-50 one-time setup.",
+      "flow": ["Generate Review Link + QR Code", "Customer Service Completes", "Auto-Send Personalized Request", "AI Optimizes Tone Over Time"],
+      "subject_line": "Your reviews are great — but you could be getting more.",
+      "delivers": ["Direct review link + QR code", "Ready-to-use message templates", "AI-personalized follow-up", "Tone optimization over time", "Response rate analytics"],
+      "wins": ["More reviews = more visibility = more customers", "Extremely easy to understand", "No complex setup", "Immediate visible results", "Easy to sell to almost any business"],
+      "before_label": "Inconsistent Review Asks",
+      "before_bullets": ["Owners forget to ask", "Requests inconsistent across staff", "Happy customers leave silent", "Lower Google Maps visibility", "Competitors with more reviews win"],
+      "after_label": "The ReviewBoost Platform",
+      "after_bullets": ["Direct link + QR at every checkout", "Auto-personalized follow-ups", "AI tone-tuning over time", "More 5-star reviews monthly", "Higher local search ranking"],
+      "why_works": "More reviews → more visibility → more customers. Fast, visible results that sell themselves."
+    }
+  ]
+}

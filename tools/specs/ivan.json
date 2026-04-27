@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "ivan",
+    "name": "Ivan",
+    "role": "Vertical SaaS"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "DentalDesk",
+      "tagline": "AI Voice Receptionist + CRM for Cebu Dental Clinics",
+      "category": "Healthcare",
+      "color": "blue",
+      "impact": "High",
+      "description": "Provides Cebu dental clinics with an AI voice agent that eliminates missed calls, handles patient FAQs, and books appointments 24/7. Bundled with a personal CRM for clinic logistics, client tracking, and a portal website. End-to-end coverage of front-desk operations.",
+      "flow": ["Patient Calls Clinic", "AI Voice Agent Answers + Books", "CRM Logs Patient + Visit", "Portal Website Surfaces Info"],
+      "subject_line": "Stop missing calls. Stop losing patients.",
+      "delivers": ["24/7 AI voice receptionist", "Patient FAQ handling", "Auto-appointment booking", "Personal CRM for clinic", "Portal website per clinic"],
+      "wins": ["Localized to Cebu (specific market)", "Front-desk ROI is concrete", "CRM + voice + portal bundle", "High clinic willingness to pay", "Easy local expansion"],
+      "before_label": "Manual Front Desk",
+      "before_bullets": ["Missed calls during busy hours", "FAQs handled inconsistently", "Manual booking errors", "No patient logistics tracking", "No clinic web presence"],
+      "after_label": "The DentalDesk Platform",
+      "after_bullets": ["AI voice receptionist 24/7", "Consistent FAQ handling", "Automated appointment booking", "CRM tracks every patient", "Portal website surfaces hours, services"],
+      "why_works": "Voice + CRM + portal bundled for a specific market. Front-desk pain is universal across Cebu dental clinics."
+    },
+    {
+      "n": 2,
+      "title": "Bureaucracy Buffer",
+      "tagline": "Document Renewal Workflow for Recurring Permits",
+      "category": "Government Tech",
+      "color": "orange",
+      "impact": "Medium",
+      "description": "Recurring permits, vehicle registrations, and pro license renewals rely on remembering a date once a year. Bureaucracy Buffer is a Document Expiry workflow: an LLM parses renewal requirements (e.g., 'recent ID photo + clearance'), pre-fills known data into a checklist 30 days before deadline. Extensible to local government partnerships.",
+      "flow": ["Track Doc Expiry Dates", "LLM Parses Renewal Requirements", "Pre-Fill Checklist + Known Data", "Send 30-Day Deadline Alert"],
+      "subject_line": "Your driver's license expires in 30 days. Here's the checklist.",
+      "delivers": ["Document expiry tracking", "LLM-parsed renewal requirements", "Pre-filled checklist generation", "30-day deadline alerts", "LGU-extensible templates"],
+      "wins": ["Universal pain (everyone has docs)", "LLM-parsed requirements scale", "Government partnership upside", "Recurring annual usage", "Simple to monetize per user"],
+      "before_label": "Once-a-Year Memory",
+      "before_bullets": ["Forget renewal dates", "Last-minute paperwork scramble", "Missing required attachments", "Manual checklist research", "Late fees + service interruptions"],
+      "after_label": "The Bureaucracy Buffer Platform",
+      "after_bullets": ["Auto-tracked expiry dates", "LLM-parsed requirements", "Pre-filled checklist + data", "30-day deadline alerts", "LGU integrations on roadmap"],
+      "why_works": "Recurring permits rely on remembering once a year — and people don't. Pre-filled checklists 30 days early prevent the scramble entirely."
+    },
+    {
+      "n": 3,
+      "title": "Subscription Auditor",
+      "tagline": "Cancel Vampire Subscriptions Before They Drain Your Account",
+      "category": "Personal Finance",
+      "color": "red",
+      "impact": "Medium",
+      "description": "Links bank/credit-card alerts (via email parser) to activity logs (Screen Time API, login history, last-used dates). If you haven't used a service in 45 days, the bot sends 'Cancel or Keep?' with a direct link to the cancellation page. Stops vampire bills before they drain your account.",
+      "flow": ["Parse Bank + Card Alerts", "Cross-Reference Activity Logs", "Detect Unused Services (45 days)", "Send 'Cancel or Keep?' Alert"],
+      "subject_line": "You haven't used Netflix in 47 days. Cancel?",
+      "delivers": ["Bank + card email parsing", "Activity log cross-reference", "Unused-service detection", "Cancel-or-keep alerts", "Direct cancellation links"],
+      "wins": ["Universal pain across consumers", "Stops vampire charges", "Direct + measurable savings", "Easy viral mechanic", "Low ongoing cost"],
+      "before_label": "Vampire Subscriptions",
+      "before_bullets": ["Forget unused services", "Charged monthly with no value", "Manual cancellation hassle", "Hard to detect what's unused", "Drain compounds over years"],
+      "after_label": "The Subscription Auditor",
+      "after_bullets": ["Bank + activity cross-referenced", "45-day inactivity threshold", "Cancel-or-keep alerts", "Direct cancellation links", "Annual savings dashboard"],
+      "why_works": "If you haven't used a service in 45 days, you probably won't. We surface the bill and the cancel link in one tap."
+    }
+  ]
+}

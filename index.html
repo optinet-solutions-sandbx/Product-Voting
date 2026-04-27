@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineering Weekend Challenge · Sign in to vote</title>
+  <meta name="description" content="Sign in with your work email to cast your votes for the AI Engineering Weekend Challenge." />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="login-page">
+
+  <!-- ===== Left: editorial art column ===== -->
+  <aside class="login-art">
+    <div class="login-art-mark">AI Engineering</div>
+
+    <div class="login-art-titlewrap">
+      <span class="login-art-eyebrow">Weekend Challenge · 2026</span>
+      <h1 class="login-art-title">Thirty ideas. <em>Ten get built.</em><br />One pays €1,000.</h1>
+      <p class="login-art-prize"><strong>€1,000</strong> cash to whoever's idea lands the first paying customer.</p>
+    </div>
+
+    <div class="login-art-foot">
+      <span>Internal · Mandatory</span>
+      <span>Voting closes Mon 17:00</span>
+    </div>
+  </aside>
+
+  <!-- ===== Right: sign-in form ===== -->
+  <section class="login-form-col">
+    <div class="login-form-head">
+      <span>Internal Only</span>
+      <a href="prize.html">Preview the prize <span class="arrow">→</span></a>
+    </div>
+
+    <form class="login-form" id="login-form" novalidate>
+      <h2>Verify yourself.</h2>
+      <p class="lede">Sign in with your work credentials so we can record your ballot under your name. One vote per teammate, ten in total — the top ten go straight to build.</p>
+
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Müller" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Work Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@optinetsolutions.com" required />
+      </div>
+
+      <div class="login-error" id="login-error" role="alert"></div>
+
+      <button class="login-submit" type="submit">
+        Continue to ballot <span class="arrow">→</span>
+      </button>
+
+      <p class="login-fineprint">By signing in you confirm you're on the team. Your selections are visible only to the awards committee.</p>
+
+      <!-- Voter status — light social proof + admin transparency -->
+      <div class="voter-status">
+        <div class="voter-status-head">
+          <span>Who's voted so far</span>
+          <strong id="voter-count">0 ballots</strong>
+        </div>
+        <div class="voter-list" id="voter-list">
+          <div class="voter-list-empty">No one's voted yet — be the first.</div>
+        </div>
+      </div>
+    </form>
+
+    <div></div>
+  </section>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      /* If already signed in, jump straight to the ballot. */
+      if (window.Auth.user()) {
+        window.location.href = "vote.html";
+        return;
+      }
+
+      const form = document.getElementById("login-form");
+      const err = document.getElementById("login-error");
+
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        err.textContent = "";
+        const data = new FormData(form);
+        try {
+          window.Auth.signIn({
+            name: data.get("name"),
+            email: data.get("email")
+          });
+          window.location.href = "vote.html";
+        } catch (ex) {
+          err.textContent = ex.message;
+        }
+      });
+
+      /* Render voter list (async — fetched from backend if configured) */
+      function fmt(iso) {
+        const d = new Date(iso);
+        const hh = String(d.getHours()).padStart(2, "0");
+        const mm = String(d.getMinutes()).padStart(2, "0");
+        return `${d.toLocaleDateString("en-GB", { day: "2-digit", month: "short" })} · ${hh}:${mm}`;
+      }
+
+      (async () => {
+        const voters = await window.Auth.voterList();
+        document.getElementById("voter-count").textContent =
+          `${voters.length} ${voters.length === 1 ? "ballot" : "ballots"}`;
+        if (voters.length) {
+          document.getElementById("voter-list").innerHTML = voters
+            .map(v => `<div class="voter-row"><span>${v.name}</span><time>${fmt(v.submittedAt)}</time></div>`)
+            .join("");
+        }
+
+        /* If voting has closed, replace the form with a results CTA. */
+        const status = await window.Auth.votingStatus();
+        if (status && status.closed) {
+          const formEl = document.getElementById("login-form");
+          formEl.innerHTML = `
+            <h2>The results are <em style="color:var(--gold);font-style:italic">in.</em></h2>
+            <p class="lede">Voting has closed. ${status.totalBallots} ballot${status.totalBallots === 1 ? "" : "s"} cast. The top ten ideas — one per teammate — are now live on the results page.</p>
+            <a class="login-submit" href="results.html" style="text-decoration:none; display:inline-flex;">
+              View results <span class="arrow">→</span>
+            </a>
+          `;
+        }
+      })();
+    })();
+  </script>
+</body>
+</html>

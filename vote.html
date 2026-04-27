@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineering Weekend Challenge · Cast Your Vote</title>
+  <meta name="description" content="Pick the strongest idea from each of your colleagues. Ten votes. One winner. €1,000 prize." />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+
+  <!-- ================== Top bar ================== -->
+  <header class="topbar">
+    <div class="container topbar-inner with-identity">
+      <div class="brand">
+        <span class="brand-mark">AI Engineering</span>
+        <span class="brand-text">Weekend Challenge · 2026</span>
+      </div>
+
+      <div class="topbar-progress">
+        <span class="pmono" id="progress-count">00 / 10</span>
+        <div class="pbar" aria-hidden="true">
+          <div class="pbar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="identity" id="identity" title="Signed in">
+        <span>Signed in · <strong id="identity-name">—</strong></span>
+        <span class="signout" id="signout">Sign out</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================== Hero ================== -->
+  <section class="container vote-hero">
+    <div>
+      <div class="eyebrow">Weekend Challenge · Voting round · Closes Monday 17:00</div>
+      <h1>Pick the strongest idea<br />from each of <em>your ten teammates.</em></h1>
+      <p style="color: var(--bone-dim); margin-top: 1.5rem; max-width: 52ch; font-size: 0.98rem;">Thirty ideas were submitted. Your ten picks roll up into the team's top ten — and that's what we build. The €1,000 lands when the first idea on the list earns its first paying customer.</p>
+    </div>
+    <aside class="vote-hero-meta">
+      <div class="row"><span>Submitters</span><strong>10</strong></div>
+      <div class="row"><span>Total ideas</span><strong>30</strong></div>
+      <div class="row"><span>Your votes</span><strong>10 required</strong></div>
+      <div class="row"><span>Prize</span><a href="prize.html" style="color:var(--gold)">€1,000 cash →</a></div>
+    </aside>
+  </section>
+
+  <!-- ================== Submitters ================== -->
+  <main class="container">
+    <div class="submitters" id="submitters" aria-live="polite"></div>
+  </main>
+
+  <!-- ================== Footer ================== -->
+  <footer class="container footnote">
+    <span>AI Engineering · Weekend Challenge 2026</span>
+    <span>One vote per colleague · Editable until lock-in</span>
+    <a class="utility-link" href="prize.html">See the prize <span class="arrow">→</span></a>
+  </footer>
+
+  <!-- ================== Sticky submit bar ================== -->
+  <div class="submit-bar" role="region" aria-label="Submit votes">
+    <div class="submit-status" id="submit-status">
+      <strong>0</strong> of 10 colleagues voted
+    </div>
+    <button class="submit-btn" id="submit-btn" data-ready="false" disabled>
+      Submit votes <span class="arrow">→</span>
+    </button>
+  </div>
+
+  <!-- ================== Lightbox (full pitch) ================== -->
+  <div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Full pitch view">
+    <div class="lightbox-frame">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+      <img id="lightbox-img" class="lightbox-img" alt="" />
+      <div class="lightbox-meta">
+        <span>— Full pitch —</span>
+        <strong id="lightbox-title"></strong>
+        <span id="lightbox-tag"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================== Confirmation modal ================== -->
+  <div class="modal-veil" id="modal" role="dialog" aria-modal="true" data-open="false">
+    <div class="modal">
+      <div class="modal-eyebrow">— Ballot recorded —</div>
+      <h2 id="modal-title">Your vote is in.</h2>
+      <p id="modal-body">Logged under your name. The top 10 go to build straight after voting closes. The €1,000 lands when the first paying customer signs up — and you'll know whose idea did it.</p>
+      <button class="modal-close" id="modal-close">View the prize →</button>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/voting.js"></script>
+</body>
+</html>

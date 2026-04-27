@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "ianjay",
+    "name": "Ian Jay",
+    "role": "iGaming Strategy"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "CompetitorScope",
+      "tagline": "Real-Time Competitor Intelligence for iGaming Operators",
+      "category": "iGaming Intelligence",
+      "color": "blue",
+      "impact": "High",
+      "description": "Mid-tier iGaming operators rely on a junior analyst maintaining a stale spreadsheet of competitor bonuses, RTPs, and payment options. CompetitorScope automates it — daily scraping of welcome bonuses, VIP tiers, payment changes, and landing-page edits across 25 competitors, delivered as a weekly intel brief plus Slack alerts.",
+      "flow": ["Scrape Competitor Sites", "Detect Promo & Tier Changes", "AI Generates Weekly Brief", "Alert Operator Team"],
+      "subject_line": "Here's what your top 5 competitors changed this week.",
+      "delivers": ["Weekly 'what changed' briefs", "Real-time bonus boost alerts", "Side-by-side competitor view", "Payment method change tracking", "Geo-restriction monitoring"],
+      "wins": ["100% reuse of existing scraper", "Cold email IS the demo", "Recurring SaaS at mid-ticket", "Buyer controls discretionary spend", "Short path to first invoice"],
+      "before_label": "Manual Competitor Tracking",
+      "before_bullets": ["Junior analyst maintains stale sheet", "Always incomplete, scales linearly", "Missed bonus boosts cost FTDs", "No real-time alerting", "Manual side-by-side comparisons"],
+      "after_label": "The CompetitorScope Platform",
+      "after_bullets": ["Automated daily scraping at scale", "Weekly intel brief auto-delivered", "Real-time Slack alerts on changes", "Branded report ready for the CMO", "10–25 tracked competitors per plan"],
+      "why_works": "The cold email IS the demo. A populated weekly report on the prospect's named top 5 competitors cannot be ignored by a CRM head."
+    },
+    {
+      "n": 2,
+      "title": "AffiliateGuard+",
+      "tagline": "Compliance + Lost-Revenue Audit for iGaming Affiliates",
+      "category": "Compliance",
+      "color": "red",
+      "impact": "High",
+      "description": "Operators in regulated markets carry strict liability for affiliate publishing. Most have hundreds of affiliates and zero scalable audit. AffiliateGuard+ scrapes every affiliate page promoting the brand, scores compliance violations and dead-link revenue leaks, and ships a regulator-ready evidence pack — two budget holders unlocked on one email.",
+      "flow": ["Scrape Affiliate Footprint", "Check Compliance + Link Health", "AI Generates Severity Report", "Auto-Draft Fix Emails"],
+      "subject_line": "47 affiliate pages are non-compliant — €38K in lost FTDs from dead links last month.",
+      "delivers": ["Compliance violation reports", "Dead-link revenue inventory", "Severity scoring + trends", "Auto-drafted takedown emails", "Regulator-ready evidence packs"],
+      "wins": ["Two buyers in one email", "Quantified lost-revenue figure", "Shortest sales cycle of the three", "Same crawl, two reports", "Bundle entry point for other products"],
+      "before_label": "Manual Affiliate Audit",
+      "before_bullets": ["Hundreds of affiliates, zero scalable audit", "Regulator letter triggers reactive scramble", "Dead links bleed FTDs daily, uncounted", "Compliance and CMO operate in silos", "Quarterly numbers miss with no explanation"],
+      "after_label": "The AffiliateGuard+ Platform",
+      "after_bullets": ["Continuous affiliate footprint monitoring", "Dual compliance + revenue payload", "Auto-drafted human-review fix emails", "Lost revenue anchored on real FTD value", "Regulator-ready evidence in one click"],
+      "why_works": "Two budget holders unlocked on one email. The lost-revenue number is quantitative, immediate, and impossible to ignore."
+    },
+    {
+      "n": 3,
+      "title": "GeoGen+",
+      "tagline": "Per-Geo Landing Pages + Per-Streamer Branded Pages",
+      "category": "Performance Marketing",
+      "color": "purple",
+      "impact": "High",
+      "description": "Operators run hundreds of geo + language + bonus landing pages and rarely test them at volume. GeoGen+ generates geo/language variants, bonus-specific pages, and per-streamer branded pages on the same engine — speaks to Performance Marketing AND Affiliate heads, unlocks an enterprise SKU at €7.5–10K/mo.",
+      "flow": ["Scrape Existing Pages + SERPs", "Detect Geo + Streamer Gaps", "AI Generates Branded Variants", "Deliver Live Preview"],
+      "subject_line": "10 ready-to-launch landing pages for your top 5 markets — plus 2 custom pages for your streamers.",
+      "delivers": ["Geo + language variants", "Bonus-specific page generation", "Per-affiliate branded pages", "Per-streamer custom pages", "A/B test variant batches"],
+      "wins": ["Highest leverage of existing engine", "Per-streamer axis = enterprise SKU", "Speaks to two heads at the operator", "Performance budgets are large + discretionary", "Natural recurring expansion"],
+      "before_label": "Slow, Manual Page Production",
+      "before_bullets": ["Copywriter-dependent, hard to scale", "Volume cap on A/B testing", "Streamers given generic Linktree", "Conversion lift left on the table", "No per-jurisdiction rules layer"],
+      "after_label": "The GeoGen+ Engine",
+      "after_bullets": ["Geo + language pages on demand", "Per-streamer branded pages at scale", "A/B variant batches in operator brand kit", "Compliance rules baked in per market", "Hand-deliverable preview link in cold email"],
+      "why_works": "Highest leverage of our existing AI website generator — repackaged for a buyer who pays roughly 20× more."
+    }
+  ]
+}

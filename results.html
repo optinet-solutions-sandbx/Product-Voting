@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineering Weekend Challenge · Results</title>
+  <meta name="description" content="The top 10 ideas from the Weekend Challenge — selected by the team." />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">AI Engineering</span>
+        <span class="brand-text">Weekend Challenge · 2026</span>
+      </div>
+      <div></div>
+      <a class="topbar-link" href="prize.html">
+        The Prize <span class="arrow">→</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container results-hero">
+    <span class="eyebrow" id="results-eyebrow">— Voting closed —</span>
+    <h1>The top ten<br /><em>are in.</em></h1>
+    <p class="lede" id="results-lede">Below: one winning idea per teammate. These are what we build. The €1,000 lands when the first paying customer signs up.</p>
+    <div class="results-stats">
+      <div class="results-stat">
+        <span class="num" id="stat-ballots">—</span>
+        <span class="label">Ballots cast</span>
+      </div>
+      <div class="results-stat">
+        <span class="num">10</span>
+        <span class="label">Ideas to build</span>
+      </div>
+      <div class="results-stat">
+        <span class="num">€1K</span>
+        <span class="label">In cash</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results grid (or loading / not-yet-closed states) -->
+  <main class="container">
+    <div id="results-root">
+      <div class="results-loading">Loading results...</div>
+    </div>
+  </main>
+
+  <p class="results-footnote">
+    From a Monday email to a real product. <em>The first invoice wins.</em>
+  </p>
+
+  <!-- Lightbox (full pitch) -->
+  <div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Full pitch view">
+    <div class="lightbox-frame">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+      <img id="lightbox-img" class="lightbox-img" alt="" />
+      <div class="lightbox-meta">
+        <span>— Full pitch —</span>
+        <strong id="lightbox-title"></strong>
+        <span id="lightbox-tag"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/results.js"></script>
+</body>
+</html>

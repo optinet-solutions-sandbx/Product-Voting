@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "revo",
+    "name": "Revo",
+    "role": "Web Platform"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "InstantSite Library",
+      "tagline": "Pre-Built Website Platform for Small Businesses",
+      "category": "Web Platform",
+      "color": "green",
+      "impact": "High",
+      "description": "A library of pre-designed websites tailored for small businesses. Each business gets instant access to a ready-made site plus a simple dashboard to edit name, services, images, contact, branding. Conversion-optimized templates, mobile-friendly, SEO-ready, with built-in Google Maps reviews integration. Launch in minutes, not months.",
+      "flow": ["Pick Pre-Built Template", "Edit Via Dashboard", "Auto-Pull Google Reviews", "Instant Live Site"],
+      "subject_line": "Your business deserves a website. Here's one — already built.",
+      "delivers": ["Conversion-optimized templates", "No-code edit dashboard", "Instant deployment", "Google Maps reviews auto-display", "Mobile + SEO ready by default"],
+      "wins": ["Removes complexity barrier", "Speed = adoption", "Existing reviews = built-in credibility", "Optional add-on revenue", "Reframes website as low-effort tool"],
+      "before_label": "Custom Website Build",
+      "before_bullets": ["Expensive and time-consuming", "Months of back-and-forth", "Technical skills required", "Manual review collection", "Owner avoids investing entirely"],
+      "after_label": "The InstantSite Library",
+      "after_bullets": ["Live site in minutes", "Edit in plain English", "Reviews surface automatically", "Mobile + SEO baked in", "Add-ons for booking + analytics"],
+      "why_works": "Most businesses don't invest in websites because they see them as expensive. Standardized templates + auto-reviews reframe websites as a 5-minute decision."
+    },
+    {
+      "n": 2,
+      "title": "ClaimYourSite",
+      "tagline": "Pre-Built Site, One-Click Adoption",
+      "category": "Lead Generation",
+      "color": "blue",
+      "impact": "High",
+      "description": "Scrape Google Maps for businesses without websites. Build a fully designed single-page site using the scraped business data. Email the owner a preview and invite them to 'claim' it. The only initial decision is yes or no — no planning, designing, or building. Edits and upsells come after they opt in.",
+      "flow": ["Scrape Business Data", "AI Builds Preview Site", "Email Owner the Preview", "Owner Claims & Customizes"],
+      "subject_line": "Your website is ready. Click to claim it.",
+      "delivers": ["Auto-built single-page site", "Pre-filled with scraped data", "Hosted preview URL", "One-click claim flow", "Branded customization on adoption"],
+      "wins": ["Zero upfront effort for the buyer", "Yes/no is the only first decision", "Removes decision fatigue", "Natural upsell path post-claim", "Shows value before price"],
+      "before_label": "Sales-First Website Pitch",
+      "before_bullets": ["Owner must imagine the result", "High commitment before any value", "Long deliberation cycle", "Slow time-to-first-customer", "Many ghost the salesperson"],
+      "after_label": "The ClaimYourSite Platform",
+      "after_bullets": ["Site already built and visible", "One yes-or-no decision to start", "Edits requested after adoption", "Frictionless first step", "Upsell custom features post-claim"],
+      "why_works": "We present them with a ready-made solution. The only initial decision is yes or no — adoption skyrockets compared to start-from-scratch pitches."
+    },
+    {
+      "n": 3,
+      "title": "ReputationLift",
+      "tagline": "Reputation & Review Boosting Add-On",
+      "category": "Reputation",
+      "color": "purple",
+      "impact": "Medium",
+      "description": "An add-on service that improves the business's online reputation across Google Maps and review platforms. Combines with the website offer to create a complete online presence solution — more visibility, more trust signals, more conversions from local search.",
+      "flow": ["Audit Current Reputation", "AI Generates Engagement Plan", "Boost Reviews + Visibility", "Track Local Search Lift"],
+      "subject_line": "Your competitors have more reviews. Let's fix that.",
+      "delivers": ["Google Maps profile optimization", "Review request automation", "Local SEO signal boost", "Engagement insights", "Cross-platform visibility tracking"],
+      "wins": ["More reviews = more customers", "Trust signals stack with website offer", "Bundled value > standalone", "Owners care about exposure first", "Local search = direct conversions"],
+      "before_label": "Reactive Reputation Management",
+      "before_bullets": ["Reviews scattered, unmanaged", "Negative reviews go unanswered", "No system for asking happy customers", "Profile incomplete and stale", "Lower local search visibility"],
+      "after_label": "The ReputationLift Platform",
+      "after_bullets": ["Active review pipeline", "Automated request sequences", "Strong, completed Google profile", "Higher local search ranking", "Bundled with the website offer"],
+      "why_works": "Most owners care about one thing: more exposure, more customers. Reputation + website together compound discoverability and trust."
+    }
+  ]
+}

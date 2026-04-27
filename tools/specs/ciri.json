@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "ciri",
+    "name": "Ciri",
+    "role": "Local Business Automation"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "ReviewBooster AI",
+      "tagline": "Reviews → Testimonials, Posts, and Insight",
+      "category": "Content + Reputation",
+      "color": "green",
+      "impact": "High",
+      "description": "Small businesses get reviews on platforms like Google Maps and Yelp but rarely use them effectively. AI scrapes reviews, extracts themes (what customers love, common complaints), auto-generates website testimonials, social posts, email campaigns, and surfaces improvement insights. Subscription tier scales by location count.",
+      "flow": ["Scrape Reviews from Maps + Yelp", "AI Extracts Themes", "Generate Testimonials + Posts + Emails", "Schedule Auto-Publishing"],
+      "subject_line": "Your reviews say a lot. Let's turn them into revenue.",
+      "delivers": ["Theme extraction from reviews", "Auto-generated testimonials", "Social post generation", "Email campaign drafts", "Improvement insights"],
+      "wins": ["Hands-off content engine", "Reviews already exist (no new asks)", "Multi-channel output from one source", "Insights surface real complaints", "Tier pricing scales naturally"],
+      "before_label": "Reviews Sitting Idle",
+      "before_bullets": ["Reviews scattered across platforms", "Themes never analyzed", "Manual testimonial copy-paste", "No social proof loop", "Complaints noticed too late"],
+      "after_label": "The ReviewBooster AI Platform",
+      "after_bullets": ["Themes auto-extracted weekly", "Testimonials auto-published", "Social posts scheduled", "Email campaigns drafted", "Improvement insights surfaced"],
+      "why_works": "Reviews already exist. We turn them into testimonials, posts, emails, and insights — fully hands-off."
+    },
+    {
+      "n": 2,
+      "title": "MissedCall Monetizer",
+      "tagline": "Lost Calls → Bookings, Automatically",
+      "category": "Conversion",
+      "color": "red",
+      "impact": "High",
+      "description": "Plumbers, salons, restaurants miss calls and lose customers. Track missed calls via call forwarding integration. Instantly send an SMS reply ('Sorry we missed you, book here') and an AI chatbot link. Auto-creates a simple booking page if they don't have one. Clear ROI: recovering lost revenue.",
+      "flow": ["Track Missed Calls", "Auto-Send SMS + Chatbot Link", "Create Booking Page Instantly", "AI Suggests Upsells"],
+      "subject_line": "You missed 14 calls last week. Here's what happened to them.",
+      "delivers": ["Missed-call tracking", "Instant SMS auto-reply", "AI chatbot link", "Auto-generated booking page", "Follow-up reminder sequence"],
+      "wins": ["Clear ROI = easy sale", "Recovers lost revenue immediately", "No phone-system change", "Booking page auto-built", "Industry-aware upsells"],
+      "before_label": "Lost Call = Lost Customer",
+      "before_bullets": ["Calls missed during busy hours", "No follow-up channel", "Customer calls competitor next", "No data on missed-call volume", "Manual callback rarely happens"],
+      "after_label": "The MissedCall Monetizer",
+      "after_bullets": ["Instant SMS reply + chatbot link", "Auto-built booking page", "Follow-up reminder sequence", "AI-suggested upsells", "Recovered revenue tracked weekly"],
+      "why_works": "Each missed call is lost revenue. We turn it into a booking before the customer dials a competitor."
+    },
+    {
+      "n": 3,
+      "title": "Local SEO Autopilot",
+      "tagline": "Set-and-Forget Local Ranking Engine",
+      "category": "Local SEO",
+      "color": "blue",
+      "impact": "High",
+      "description": "Local businesses don't understand SEO and don't have time. The autopilot detects businesses with poor SEO (no site, weak content, low rank), auto-generates SEO-optimized sites/pages, publishes blog posts targeting local keywords, and updates GBP with posts. Set and forget — focused purely on local ranking.",
+      "flow": ["Detect Poor SEO Targets", "Generate Sites + Pages", "Publish Local Blog Posts", "Update GBP Posts Auto"],
+      "subject_line": "You're #14 for 'plumber near me'. Want to be #2?",
+      "delivers": ["Keyword discovery", "AI content generation", "Auto-publishing + indexing", "GBP post updates", "Local ranking dashboard"],
+      "wins": ["Set-and-forget = low effort sale", "Local ranking = direct customers", "Reuses existing site engine", "Recurring SaaS pricing", "Visible ranking lift in weeks"],
+      "before_label": "DIY Local SEO",
+      "before_bullets": ["Owner doesn't understand SEO", "No time for content + GBP posts", "Inconsistent ranking signals", "Outranked by larger competitors", "Wasted ad spend instead"],
+      "after_label": "The SEO Autopilot Platform",
+      "after_bullets": ["Auto-generated SEO pages", "Local blog posts published weekly", "GBP refresh on schedule", "Ranking dashboard + alerts", "Owner does nothing"],
+      "why_works": "Most local businesses can't or won't do SEO. We do it on autopilot, anchored to direct local search demand."
+    }
+  ]
+}

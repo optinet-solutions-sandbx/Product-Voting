@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "leo",
+    "name": "Leo",
+    "role": "Revenue Engineering"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "SmartRoute Revenue OS",
+      "tagline": "Conversion + LTV Optimization for iGaming Operators",
+      "category": "Revenue Optimization",
+      "color": "purple",
+      "impact": "High",
+      "description": "Operators leave significant revenue on the table from existing traffic — sub-optimal conversion paths, weak LTV programs, mismatched bonus targeting. SmartRoute Revenue OS optimizes the journey end-to-end: AI tunes conversion funnels, segments players for LTV, and rebalances bonus offers in real time.",
+      "flow": ["Scrape Funnel + Player Data", "AI Detects Conversion Gaps", "Real-Time Bonus Rebalancing", "LTV Segment Optimization"],
+      "subject_line": "Your existing traffic is leaving money on the table.",
+      "delivers": ["Conversion funnel optimization", "Real-time bonus rebalancing", "LTV segmentation", "A/B variant generation", "Daily uplift reporting"],
+      "wins": ["Pure uplift on existing traffic", "No new acquisition spend needed", "Revenue OS layer = recurring SaaS", "Reuses existing analytics stack", "Operator CMOs control budget"],
+      "before_label": "Static Funnel + Generic Bonuses",
+      "before_bullets": ["Same offer for every visitor", "No real-time rebalancing", "LTV segments coarse-grained", "Conversion drop-offs invisible", "Manual A/B = slow learning"],
+      "after_label": "The SmartRoute Revenue OS",
+      "after_bullets": ["AI-tuned funnel paths", "Real-time bonus rebalancing", "Fine-grained LTV segments", "Daily variant testing at scale", "Uplift visible from week one"],
+      "why_works": "More revenue from the same traffic. The cleanest argument an operator CMO ever has to buy."
+    },
+    {
+      "n": 2,
+      "title": "BrokenBonus Detector",
+      "tagline": "Revenue Leak Hunter for iGaming Marketing Surfaces",
+      "category": "Revenue Recovery",
+      "color": "red",
+      "impact": "High",
+      "description": "Operators run hundreds of bonus pages, affiliate links, and geo-targeted offers. Broken redirects, expired offers, and misconfigured GEO targeting silently bleed conversions every day. BrokenBonus Detector continuously crawls every marketing surface, surfaces leaks, and quantifies the lost revenue.",
+      "flow": ["Crawl All Marketing Surfaces", "Detect Broken Links + Expired Offers", "Quantify Lost Revenue", "Auto-Draft Fix Tickets"],
+      "subject_line": "47 of your bonus pages are broken. Here's what they cost you.",
+      "delivers": ["Continuous link health crawl", "Expired offer detection", "GEO config validation", "Lost-revenue quantification", "Auto-drafted fix tickets"],
+      "wins": ["Quantified ROI in cold email", "Same crawler reuse across products", "Recurring SaaS at low churn", "Compliance + Revenue overlap", "Easy bundle with other tools"],
+      "before_label": "Silent Revenue Leaks",
+      "before_bullets": ["Broken redirects bleed conversions", "Expired offers still indexed", "GEO misconfig invisible", "No quantified loss figure", "Manual audit too painful to run"],
+      "after_label": "The BrokenBonus Detector Platform",
+      "after_bullets": ["Continuous health crawl", "Expired offer alerts", "GEO config validation", "Lost-revenue figure per page", "One-click fix-ticket dispatch"],
+      "why_works": "Quantified revenue leaks are uncomfortable to read and impossible to ignore. Same crawler, multiple products."
+    },
+    {
+      "n": 3,
+      "title": "Marketing Automation System",
+      "tagline": "Lead → Conversion → Delivery → Retention, Automated",
+      "category": "Marketing Automation",
+      "color": "blue",
+      "impact": "High",
+      "description": "Most operators run marketing as disjointed pieces — separate tools for lead gen, conversion, delivery, retention, with manual handoffs and lost context. The Marketing Automation System unifies the pipeline: AI orchestrates lead generation, conversion sequences, fulfillment, and retention loops in one structured system.",
+      "flow": ["Capture Lead", "AI Orchestrates Conversion", "Automated Delivery", "Retention Loop Triggers"],
+      "subject_line": "Your funnel is held together by humans. Let's fix that.",
+      "delivers": ["Unified lead-to-retention pipeline", "AI-orchestrated sequences", "Auto-delivery workflows", "Retention loop triggers", "Cross-stage analytics"],
+      "wins": ["Replaces 4-6 point tools", "Reduces manual handoffs", "Higher conversion through context", "Recurring SaaS at high price", "Natural expansion across stages"],
+      "before_label": "Disjointed Stack",
+      "before_bullets": ["Separate tools per stage", "Manual handoffs lose context", "Inconsistent conversion lift", "Retention is reactive", "Engineering wasted on glue"],
+      "after_label": "The Marketing Automation System",
+      "after_bullets": ["One unified pipeline", "AI orchestrates handoffs", "Auto-delivery + retention", "Cross-stage analytics included", "Replaces 4-6 point tools"],
+      "why_works": "Each idea targets a different part of the funnel — but together they create a more efficient, scalable, data-driven operation."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "john",
+    "name": "John",
+    "role": "Automated Services"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "Inbound Lead Responder",
+      "tagline": "AI Reply + Qualify + Book in Under 60 Seconds",
+      "category": "Local Services",
+      "color": "blue",
+      "impact": "High",
+      "description": "An AI agent connected to a local business's Instagram DMs, Facebook Messenger, and website chat. Responds to inbound messages in under 60 seconds, qualifies leads, and books appointments directly into the calendar. Solves the universal small-business problem of losing leads because they reply too slowly. Sold to local service businesses (salons, gyms, clinics, real estate) at $297/mo recurring.",
+      "flow": ["Connect IG + Messenger + Web Chat", "AI Replies Under 60 Seconds", "Qualifies Lead With Questions", "Books Appointment in Calendar"],
+      "subject_line": "Your DMs are full of leads. They're going cold while you're busy.",
+      "delivers": ["Sub-60-second reply across all channels", "AI lead qualification", "Calendar booking integration", "Spam + tire-kicker filter", "Conversation analytics dashboard"],
+      "wins": ["Universal pain across local services", "Recurring SaaS at $297/mo", "Direct ROI = easy sale", "One operator runs dozens of clients", "No permits or licenses needed"],
+      "before_label": "Manual Inbox Chaos",
+      "before_bullets": ["Owner replies hours or days late", "Hot leads go cold to competitors", "DMs scattered across 3+ apps", "No qualification before booking", "No record of conversations"],
+      "after_label": "The Inbound Lead Responder",
+      "after_bullets": ["AI replies in under 60 seconds", "Qualifies + books automatically", "Unified inbox across IG, FB, web", "Calendar populated for the owner", "Conversation history searchable"],
+      "why_works": "Speed-to-lead is the #1 conversion lever for local services. The AI never sleeps and always replies first."
+    },
+    {
+      "n": 2,
+      "title": "Faceless Video Studio",
+      "tagline": "12–60 Short-Form Videos a Month, Done For You",
+      "category": "Content Production",
+      "color": "orange",
+      "impact": "High",
+      "description": "A monthly subscription that produces 12–60 short-form faceless videos for clients' TikTok, Instagram Reels, and YouTube Shorts. We script, voice, edit, caption, and post everything for them. Sold into two segments — local businesses at $297–497/mo and online coaches/agencies at $497–997/mo. 100% recurring revenue, fully automatable.",
+      "flow": ["Onboard Client + Brand Voice", "AI Scripts + Voices + Edits", "Captions + Multi-Platform Format", "Auto-Post to TikTok, IG, YT"],
+      "subject_line": "12 short-form videos a month. You don't lift a finger.",
+      "delivers": ["AI-generated scripts in client voice", "Faceless voiceover + visuals", "Auto-caption + format per platform", "Scheduled posting across IG, TikTok, YT", "Performance + retention analytics"],
+      "wins": ["100% recurring revenue", "Two buyer segments on one engine", "Faceless = no on-camera commitment", "$297–997/mo price band", "One operator runs dozens of clients"],
+      "before_label": "DIY Content Treadmill",
+      "before_bullets": ["Owners can't keep up with 5+ videos/wk", "Hire an editor + scripter + scheduler", "Posting falls off after 2 weeks", "On-camera anxiety blocks half the niche", "Inconsistent brand voice across posts"],
+      "after_label": "The Faceless Video Studio",
+      "after_bullets": ["12–60 videos/month, hands-off", "AI-scripted + voiced + edited", "Auto-posted across all three platforms", "Faceless = anyone can run it", "Consistent brand voice every video"],
+      "why_works": "Short-form video is the dominant attention surface and almost no SMB can sustain it. We do the whole loop for them, monthly."
+    },
+    {
+      "n": 3,
+      "title": "Airbnb Optimizer",
+      "tagline": "Done-For-You Listing Rewrite + Smart Pricing + Auto Messaging",
+      "category": "Travel",
+      "color": "green",
+      "impact": "Medium",
+      "description": "Done-for-you optimization service for underperforming Airbnb hosts. We rewrite their listing copy, AI-enhance their photos, build a smart pricing strategy from market comps, and install automated guest messaging templates. Sold at $247 per listing one-time plus $97/mo for ongoing optimization.",
+      "flow": ["Scrape Listing + Market Comps", "AI Rewrites Copy + Enhances Photos", "Build Smart Pricing Strategy", "Install Auto Guest Messages"],
+      "subject_line": "Your Airbnb is underbooking. Here's why — and how to fix it.",
+      "delivers": ["AI-rewritten listing copy", "Photo enhancement + reordering", "Smart pricing strategy from comps", "Auto guest messaging templates", "Monthly performance report"],
+      "wins": ["Direct revenue lift = easy sale", "$247 one-time + $97/mo recurring", "No host involvement after onboarding", "One operator runs dozens of hosts", "Clear before/after comparison"],
+      "before_label": "Underperforming Listing",
+      "before_bullets": ["Generic listing copy nobody reads", "Photos in wrong order, washed out", "Static pricing misses peak demand", "Manual guest messages = burnout", "Lower bookings vs. comparable units"],
+      "after_label": "The Airbnb Optimizer",
+      "after_bullets": ["AI-rewritten, search-optimized copy", "Enhanced + reordered photos", "Dynamic pricing from market comps", "Automated guest messaging templates", "Measurable lift in bookings + RevPAR"],
+      "why_works": "Most underperforming Airbnbs are losing on copy, photos, pricing, or messaging. We fix all four in one engagement."
+    }
+  ]
+}

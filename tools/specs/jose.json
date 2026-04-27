@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "jose",
+    "name": "Jose",
+    "role": "Team Member"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "FarmDirect",
+      "tagline": "Farmer-to-Consumer Map Platform",
+      "category": "Marketplace",
+      "color": "blue",
+      "impact": "High",
+      "description": "Map-based platform connecting farmers directly to common consumers. Real-time farm locations, currently available produce, and fair pricing. AI predicts harvest timing for unavailable items and matches local demand to nearby farmers — fresher goods, lower prices, higher farmer profits.",
+      "flow": ["Map Local Farms", "Collect Inventory & Pricing", "AI Harvest & Demand Prediction", "Direct Consumer Connection"],
+      "subject_line": "Fresh local produce, straight from the farm.",
+      "delivers": ["AI Harvest Estimation", "Demand-Supply Matching", "Dynamic Fair Pricing", "Optimal Sourcing Recommendations", "Local Market Analytics"],
+      "wins": ["Massive TAM", "Higher Farmer Earnings", "Consumer Value", "Sustainable & Healthy", "Scalable Technology"],
+      "before_label": "Middleman Path",
+      "before_bullets": ["High middleman markup", "Opaque supply chain", "Reduced freshness", "Lower farmer profits", "Weak consumer link"],
+      "after_label": "The FarmDirect Platform",
+      "after_bullets": ["Higher profits for farmers", "Fresher produce for consumers", "Real-time pricing transparency", "AI-powered demand matching", "Direct local sourcing"],
+      "why_works": "Removes costly middlemen. Connects consumers directly to the source. Transparent value + instant connection = massive adoption and strong revenue."
+    },
+    {
+      "n": 2,
+      "title": "NoShowGuard",
+      "tagline": "AI Appointment Reminder & Rebooking System",
+      "category": "Healthcare",
+      "color": "green",
+      "impact": "High",
+      "description": "Auto-reminds patients via SMS, Viber, WhatsApp. Patients confirm, cancel, or reschedule with one tap. AI predicts likely no-shows from history, time of day, and weather, sending extra nudges. Auto-fills cancelled slots from waitlist — direct, measurable revenue recovery within the first month.",
+      "flow": ["Sync & Send Reminders", "Receive Patient Response", "AI Predicts & Proactively Acts", "Auto-Fill Cancelled Slots"],
+      "subject_line": "Confirming your upcoming appointment.",
+      "delivers": ["No-Show Prediction", "Patient Engagement Insights", "Optimized Scheduling", "Measurable ROI Reporting", "Enterprise Integration"],
+      "wins": ["Direct ROI", "Increased Revenue", "Improved Patient Experience", "Seamless Workflow", "Scalable for Large Networks"],
+      "before_label": "Traditional Reminder Process",
+      "before_bullets": ["Manual calls take significant staff time", "Prone to scheduling errors", "Poor patient confirmation rates", "Inefficient cancelled slot rebooking", "High unrecoverable lost revenue"],
+      "after_label": "The NoShowGuard Platform",
+      "after_bullets": ["Fully automated reminder system", "One-tap patient confirmation", "100% digital, integrated workflow", "Instant waitlist rebooking", "Measurable recovered revenue"],
+      "why_works": "No more unconfirmed slots. We know exactly which patients are likely to no-show and automatically fill their spot."
+    },
+    {
+      "n": 3,
+      "title": "QueueSmart",
+      "tagline": "Smart Queue & Waiting Room Management",
+      "category": "Healthcare",
+      "color": "orange",
+      "impact": "High",
+      "description": "QR-code digital queue replaces crowded waiting rooms. Patients scan on arrival, get a number, receive notifications when 2-3 patients away. AI estimates real-time wait times based on the doctor's actual pace. Lowers infection risk, reduces overcrowding, improves patient satisfaction.",
+      "flow": ["Scan QR Code", "Get Digital Number", "AI Monitors Doctor Pace", "Receive Notification"],
+      "subject_line": "Upgrade your waiting room to Smart Queue.",
+      "delivers": ["AI Dynamic Wait Forecasting", "Overcrowding Prevention", "Infection Risk Mitigation", "Increased Clinic Efficiency", "Scalable Queue Logic"],
+      "wins": ["Optimized Clinic Revenue", "Superior Patient Experience", "Enhanced Health & Safety", "Seamless Integration", "Scalable for Large Networks"],
+      "before_label": "Traditional Waiting Room",
+      "before_bullets": ["Crowded and chaotic environment", "High infection and cross-contamination risk", "No real-time wait information", "Patients tied to the waiting area", "Low patient satisfaction"],
+      "after_label": "The QueueSmart Platform",
+      "after_bullets": ["Organized and pleasant digital queue", "Reduced infection risk", "Precise real-time wait estimates", "Wait from anywhere: car, café, home", "Improved patient and staff satisfaction"],
+      "why_works": "No more chaotic waiting. We show exactly how smart, real-time wait forecasting transforms the patient experience."
+    }
+  ]
+}

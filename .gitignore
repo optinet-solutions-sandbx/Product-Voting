@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.local
+
+# Generated / temporary
+.tmp/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code internal
+.claude/

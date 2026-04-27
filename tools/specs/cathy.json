@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "cathy",
+    "name": "Cathy",
+    "role": "Marketing Systems"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "ThreatScope",
+      "tagline": "1-Page Competitor Threat Analysis for Local Businesses",
+      "category": "Marketing",
+      "color": "orange",
+      "impact": "High",
+      "description": "Scrape Google Maps for a target business plus its top 3 local competitors. Pull recent reviews, current promotions, and social posts. AI generates a customized 1-page Threat Analysis showing exactly what competitors are doing better — plus a counter-strategy. Cold email delivers the report as the hook.",
+      "flow": ["Scrape Target + Competitors", "Pull Reviews + Promos + Social", "AI Builds 1-Page Analysis", "Email Threat Report Link"],
+      "subject_line": "I ran an automated analysis on your top 3 competitors.",
+      "delivers": ["Live competitor scraping", "Promo + review + social monitoring", "AI-generated counter-strategy", "Customized 1-page report", "Automated weekly refresh"],
+      "wins": ["Cold email IS the demo", "Locally relevant, named competitors", "Counter-strategy is actionable", "Recurring competitor-tracking SaaS", "Easy upsell to dashboard plan"],
+      "before_label": "Blind Local Competition",
+      "before_bullets": ["No competitor visibility", "Surprised by new promotions", "Reactive review monitoring", "No counter-strategy framework", "Customers walk to better-positioned rivals"],
+      "after_label": "The ThreatScope Platform",
+      "after_bullets": ["Top 3 competitors auto-tracked", "Weekly threat report delivered", "AI counter-strategy included", "Promo + review change alerts", "Customers won back proactively"],
+      "why_works": "A named competitor's named promo and named new reviews — quantified and on the prospect's desk before they even reply."
+    },
+    {
+      "n": 2,
+      "title": "LeakyFunnel",
+      "tagline": "Conversion Audit + Lost-Revenue Calculator",
+      "category": "Conversion",
+      "color": "red",
+      "impact": "High",
+      "description": "Scrape e-commerce and local service sites. Run automated speed tests and check for missing tracking pixels (Meta/Google remarketing). AI calculates lost revenue from slow load times and missing pixels — delivered as a personalized 'Lost Revenue Report' in the cold email.",
+      "flow": ["Scrape Site Tech + Speed", "Detect Missing Pixels", "AI Calculates Lost Revenue", "Email Personalized Audit"],
+      "subject_line": "Your site loads in 6s. You're leaving 20% of revenue on the table.",
+      "delivers": ["Page load speed audit", "Missing pixel detection", "Lost-revenue estimation", "Personalized audit report", "Optimization recommendations"],
+      "wins": ["Quantified lost-revenue is undeniable", "Free audit = low-friction entry", "Direct ROI = easy upsell", "Industry-standard benchmarks", "Recurring optimization service"],
+      "before_label": "Silent Revenue Loss",
+      "before_bullets": ["Site speed not monitored", "Tracking pixels missing or stale", "Conversion drop-off invisible", "No retargeting flywheel", "Owner unaware of the leak"],
+      "after_label": "The LeakyFunnel Auditor",
+      "after_bullets": ["Speed + pixel audit auto-run", "Lost-revenue figure quantified", "Clear fix list per site", "Optional done-for-you fixes", "Continuous monitoring on subscription"],
+      "why_works": "A 6-second load + missing remarketing pixel = ~20% lost revenue. Industry averages anchor the number. The owner cannot ignore it."
+    },
+    {
+      "n": 3,
+      "title": "InstantSOP",
+      "tagline": "Public Documentation → Private AI Knowledge Base",
+      "category": "Operations",
+      "color": "purple",
+      "impact": "High",
+      "description": "Scrape job boards for companies hiring multiple roles, OR scrape a target's Help Center, blog, and YouTube transcripts. Feed everything into a private AI chatbot — instantly creating a 'Company Knowledge Base.' Cold email delivers a working AI Assistant trained on the prospect's own data.",
+      "flow": ["Scrape Job Boards + Public Docs", "Extract Text + Video Transcripts", "AI Builds Private Knowledge Base", "Deliver Live Chatbot Demo"],
+      "subject_line": "I built an AI Assistant trained on your company. Try it.",
+      "delivers": ["Public doc + transcript scraping", "Private AI chatbot per company", "Searchable internal knowledge base", "Auto-updating from new content", "Custom integrations on upsell"],
+      "wins": ["Demo = working AI on their data", "Trains hires faster than humans", "Cuts manager training hours", "Clear use case for hiring teams", "Path to full ops automation"],
+      "before_label": "Manual Onboarding",
+      "before_bullets": ["Hours of manager time per hire", "Inconsistent training across teams", "Knowledge trapped in heads", "Slow ramp on new roles", "Same questions asked daily"],
+      "after_label": "The InstantSOP Platform",
+      "after_bullets": ["Private chatbot trained on their docs", "Instant answers across the team", "Auto-updating knowledge base", "Onboarding accelerated", "Full ops automation upsell path"],
+      "why_works": "We scraped your public docs and built an internal AI Assistant for your team. The cold email IS a working demo of their company's AI."
+    }
+  ]
+}
