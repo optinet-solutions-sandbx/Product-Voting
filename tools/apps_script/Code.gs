@@ -35,14 +35,21 @@ function getAdminToken_() {
 const ALLOWED_EMAIL_DOMAINS = []; // e.g. ["optinetsolutions.com"]
 
 /** Voting window.
- *  Set STARTS_AT to the moment voting opens (ISO 8601 with timezone).
- *  Voting closes WINDOW_HOURS after that — automatically.
- *  Leave STARTS_AT empty ("") to disable the deadline trigger; voting then
- *  stays open until quorum (EXPECTED_VOTERS ballots) or FORCE_CLOSED. */
-const STARTS_AT = "";          // e.g. "2026-04-29T17:00:00+02:00"
+ *  STARTS_AT is read from Script Properties so you can start the clock
+ *  without editing source. Two ways to set it:
+ *    1. Hit GET ?action=start&token=ADMIN_TOKEN  (records "now")
+ *    2. Project Settings → Script Properties → set STARTS_AT manually
+ *
+ *  Voting closes WINDOW_HOURS after STARTS_AT — automatically. If STARTS_AT
+ *  is unset, the deadline trigger is disabled (voting stays open until
+ *  quorum / EXPECTED_VOTERS ballots / FORCE_CLOSED). */
 const WINDOW_HOURS = 24;
 const EXPECTED_VOTERS = 10;
 const FORCE_CLOSED = false;
+
+function getStartsAt_() {
+  return PropertiesService.getScriptProperties().getProperty("STARTS_AT") || "";
+}
 
 /* ===== HELPERS =========================================================== */
 
@@ -81,8 +88,9 @@ function readBallotRows_() {
 }
 
 function computedClosesAt_() {
-  if (!STARTS_AT) return null;
-  const start = new Date(STARTS_AT);
+  const startsAt = getStartsAt_();
+  if (!startsAt) return null;
+  const start = new Date(startsAt);
   if (isNaN(start.getTime())) return null;
   return new Date(start.getTime() + WINDOW_HOURS * 60 * 60 * 1000);
 }
@@ -91,6 +99,7 @@ function votingState_(rows) {
   rows = rows || readBallotRows_();
   const totalBallots = rows.length;
   const reachedQuorum = totalBallots >= EXPECTED_VOTERS;
+  const startsAt = getStartsAt_();
   const closesAt = computedClosesAt_();
   const pastDeadline = closesAt && new Date() >= closesAt;
   const closed = FORCE_CLOSED || reachedQuorum || pastDeadline;
@@ -106,7 +115,7 @@ function votingState_(rows) {
     reason,
     totalBallots,
     expected: EXPECTED_VOTERS,
-    startsAt: STARTS_AT || null,
+    startsAt: startsAt || null,
     closesAt: closesAt ? closesAt.toISOString() : null,
     windowHours: WINDOW_HOURS
   };
@@ -180,6 +189,48 @@ function doGet(e) {
     }
     const tally = computeTally_(rows);
     return jsonResponse_({ success: true, tally, totalBallots: rows.length });
+  }
+
+  /* Admin: start the 24-hour countdown.
+     Records the current timestamp as STARTS_AT in Script Properties.
+     Refuses to overwrite an existing start unless &force=1 is passed. */
+  if (action === "start") {
+    const token = (e.parameter && e.parameter.token) || "";
+    const adminToken = getAdminToken_();
+    if (!adminToken || token !== adminToken) {
+      return jsonResponse_({ success: false, error: "Unauthorized" });
+    }
+    const props = PropertiesService.getScriptProperties();
+    const existing = props.getProperty("STARTS_AT");
+    const force = e.parameter.force === "1";
+    if (existing && !force) {
+      const closesAt = computedClosesAt_();
+      return jsonResponse_({
+        success: false,
+        error: "Voting has already started. Add &force=1 to reset.",
+        startsAt: existing,
+        closesAt: closesAt ? closesAt.toISOString() : null
+      });
+    }
+    const now = new Date();
+    props.setProperty("STARTS_AT", now.toISOString());
+    return jsonResponse_({
+      success: true,
+      startsAt: now.toISOString(),
+      closesAt: new Date(now.getTime() + WINDOW_HOURS * 60 * 60 * 1000).toISOString(),
+      windowHours: WINDOW_HOURS
+    });
+  }
+
+  /* Admin: clear STARTS_AT so voting falls back to no-deadline mode. */
+  if (action === "reset_start") {
+    const token = (e.parameter && e.parameter.token) || "";
+    const adminToken = getAdminToken_();
+    if (!adminToken || token !== adminToken) {
+      return jsonResponse_({ success: false, error: "Unauthorized" });
+    }
+    PropertiesService.getScriptProperties().deleteProperty("STARTS_AT");
+    return jsonResponse_({ success: true, cleared: true });
   }
 
   return jsonResponse_({ success: false, error: "Unknown action" });

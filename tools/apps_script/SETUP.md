@@ -96,19 +96,43 @@ Voting auto-closes when ANY of these is true (whichever hits first):
    (default 24h). Set `STARTS_AT = ""` to disable the deadline trigger.
 3. **Manual** — flip `FORCE_CLOSED = true` and redeploy a new version
 
-### Setting the start time
+### Starting the 24-hour countdown
 
-When you announce the challenge to the team, edit Code.gs:
+`STARTS_AT` is stored in Script Properties — no source edit, no redeploy
+needed once v3 is live. Two ways to start:
 
-```javascript
-const STARTS_AT = "2026-04-29T17:00:00+02:00";  // ISO 8601 with timezone
-const WINDOW_HOURS = 24;
+**Option A — one-click start URL (recommended).** When you announce the
+challenge to the team, hit this in your browser:
+
+```
+https://<your-web-app-url>/exec?action=start&token=<ADMIN_TOKEN>
 ```
 
-Then **Deploy → Manage deployments → New version → Deploy**. The script
-computes `closesAt = STARTS_AT + 24h` and rejects ballots after that.
+The script records `STARTS_AT = <now>` in Script Properties and returns
+`{ success, startsAt, closesAt }` so you can confirm. Voting auto-closes
+exactly 24 hours later.
 
-You can leave `STARTS_AT = ""` and just rely on quorum (10 ballots) — the
+If you've already started and want to reset (rare — usually only for
+reschedules):
+```
+https://<your-web-app-url>/exec?action=start&token=<ADMIN_TOKEN>&force=1
+```
+
+To **clear** the start time (back to no-deadline mode):
+```
+https://<your-web-app-url>/exec?action=reset_start&token=<ADMIN_TOKEN>
+```
+
+**Option B — manual via Apps Script UI.** Project Settings → Script
+Properties → add a property named `STARTS_AT` with the ISO timestamp:
+
+```
+2026-04-29T17:00:00+02:00
+```
+
+Save. Voting closes 24h after that moment.
+
+You can leave `STARTS_AT` unset and just rely on quorum (10 ballots) — the
 deadline is then optional.
 
 When closed:
