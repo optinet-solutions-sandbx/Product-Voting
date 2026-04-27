@@ -372,7 +372,7 @@ window.SUBMITTERS = [
         teaser: "Scrape independent hotels and B&Bs with weak Booking/Airbnb listings — single language, thin descriptions, low scores. AI rewrites the listing in 8–12 languages and flags photo issues. Cold email contains the rewritten listing side-by-side.",
         bullets: ["Massive willingness to pay — one extra booking pays the year", "Pan-European market across small hotels + B&Bs", "Untouched vertical — no one else on the team is pitching it"],
         subjectLine: "Your Booking listing — rewritten, in 8 languages.",
-        impact: "High"
+        image: "assets/img/chris/1.webp", impact: "High"
       },
       {
         id: "chris-02", title: "ProfileScore", tagline: "Audit-Score GBP Fix for Local Businesses",
@@ -380,7 +380,7 @@ window.SUBMITTERS = [
         teaser: "Reuse our Google Maps pipeline. Score every business's GBP on a 0–100 scale. For low scorers, AI generates the full fix: optimized description, 10 GBP posts, Q&A answers, correct category, photo prompts.",
         bullets: ["Scoreboard hook — opens at 60%+", "Fastest to build (3 days from existing stack)", "Cleanest extension of what we already have"],
         subjectLine: "Your Google profile scored 31/100.",
-        impact: "High"
+        image: "assets/img/chris/2.webp", impact: "High"
       },
       {
         id: "chris-03", title: "SiteSwap", tagline: "Side-by-Side Modern Redesign for Outdated Business Sites",
@@ -388,7 +388,7 @@ window.SUBMITTERS = [
         teaser: "Biggest TAM of the three. Scrape Google Maps for businesses with old, slow, or non-mobile sites. AI generates a modern replacement using their existing content. Cold email contains a side-by-side screenshot — their site today vs. ours.",
         bullets: ["Biggest TAM of the three", "Reuses the entire existing stack — flips the filter from no-website to ugly-website", "Side-by-side screenshot is undeniable in the inbox"],
         subjectLine: "Your website vs. the version we already built for you.",
-        impact: "High"
+        image: "assets/img/chris/3.webp", impact: "High"
       }
     ]
   }
