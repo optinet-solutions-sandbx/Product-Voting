@@ -10,7 +10,7 @@
  *
  * Sheet structure (auto-created on first call):
  *   "Ballots" sheet
- *     timestamp | voter_email | voter_name | jose | ianjay | revo | jas | cathy | ralph | ciri | leo | ivan | john
+ *     timestamp | voter_email | voter_name | jose | ianjay | revo | jas | cathy | ralph | ciri | leo | ivan | john | chris
  */
 
 /* ===== CONFIG ============================================================ */
@@ -18,7 +18,7 @@
 /** Order of submitter slugs — MUST match window.SUBMITTERS in data.js */
 const SUBMITTER_ORDER = [
   "jose", "ianjay", "revo", "jas", "cathy",
-  "ralph", "ciri", "leo", "ivan", "john"
+  "ralph", "ciri", "leo", "ivan", "john", "chris"
 ];
 
 /** Email → submitter slug. Used to reject self-votes server-side.
@@ -33,7 +33,8 @@ const SUBMITTER_EMAILS = {
   "cirilo@optinetsolutions.com":   "ciri",
   "leo@optinetsolutions.com":      "leo",
   "ivan@optinetsolutions.com":     "ivan",
-  "john@optinetsolutions.com":     "john"
+  "john@optinetsolutions.com":     "john",
+  "chris@optinetsolutions.com":    "chris"
 };
 
 /** Sheet tab name */
@@ -59,7 +60,7 @@ const ALLOWED_EMAIL_DOMAINS = []; // e.g. ["optinetsolutions.com"]
  *  is unset, the deadline trigger is disabled (voting stays open until
  *  quorum / EXPECTED_VOTERS ballots / FORCE_CLOSED). */
 const WINDOW_HOURS = 24;
-const EXPECTED_VOTERS = 10;
+const EXPECTED_VOTERS = 11;
 const FORCE_CLOSED = false;
 
 function getStartsAt_() {
