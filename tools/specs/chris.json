@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "chris",
+    "name": "Chris",
+    "role": "Vertical Outreach"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "ListingRewriter",
+      "tagline": "Multilingual Listing Optimizer for Hotels & B&Bs",
+      "category": "Hospitality",
+      "color": "blue",
+      "impact": "High",
+      "description": "Scrape independent hotels and B&Bs with weak Booking and Airbnb listings — single-language copy, thin descriptions, low review scores. AI rewrites the listing in 8–12 languages, fixes the title and amenities for search, and flags photo issues with reorder hints. Cold email contains the rewritten listing side-by-side. One extra booking pays for a year of the service.",
+      "flow": ["Scrape Hotel + B&B Listings", "AI Rewrites in 8–12 Languages", "Flag Photo Issues + Reorder Hints", "Cold Email — Side-by-Side Preview"],
+      "subject_line": "Your Booking listing — rewritten, in 8 languages.",
+      "delivers": ["Multilingual rewrite (8–12 languages)", "Search-optimized title + amenities", "Photo issue flags + reorder hints", "Side-by-side preview in cold email", "One-click adoption + monthly refresh"],
+      "wins": ["One extra booking pays the year", "Pan-European TAM, untouched on the team", "Massive willingness to pay", "Direct, measurable revenue uplift", "Clear before/after for the buyer"],
+      "before_label": "Single-Language Listing",
+      "before_bullets": ["English-only listing in non-English markets", "Generic copy nobody reads", "Photos washed out + out of order", "Low review-score visibility", "Underbooked vs. comparable units"],
+      "after_label": "The ListingRewriter Platform",
+      "after_bullets": ["8–12 languages, native phrasing", "AI-optimized title + descriptions", "Flagged photo fixes + reorder", "Side-by-side preview in the cold email", "Measurable booking lift in 30 days"],
+      "why_works": "Independents underbook because their listing speaks one language to a multilingual market. We translate the whole funnel."
+    },
+    {
+      "n": 2,
+      "title": "ProfileScore",
+      "tagline": "Audit-Score GBP Fix for Local Businesses",
+      "category": "Local SEO",
+      "color": "orange",
+      "impact": "High",
+      "description": "Reuse the existing Google Maps pipeline. Score every business's Google Business Profile on a 0–100 scale. For low scorers, AI generates the full fix — optimized description, 10 ready-to-publish GBP posts, drafted Q&A answers, correct category, and photo prompts. Cold email leads with the score; the fix is already attached.",
+      "flow": ["Scrape GBP via Google Maps", "AI Scores Profile (0–100)", "Generate Full Fix — Posts + Q&A + Photos", "Cold Email With Score + Fix Preview"],
+      "subject_line": "Your Google profile scored 31/100.",
+      "delivers": ["0–100 GBP audit score", "AI-rewritten description + category fix", "10 ready-to-publish GBP posts", "Drafted Q&A answers", "Photo prompts + reorder plan"],
+      "wins": ["Scoreboard hook opens at 60%+", "Fastest to build (3 days from existing stack)", "Cleanest extension of what we already have", "Immediate visible value in the cold email", "Universal SMB pain"],
+      "before_label": "Stale GBP, Score 31/100",
+      "before_bullets": ["Outdated description + wrong category", "No GBP posts in 6+ months", "Empty Q&A section", "Photos older than 18 months", "Low local-pack visibility"],
+      "after_label": "The ProfileScore Platform",
+      "after_bullets": ["Audit score + line-by-line breakdown", "AI rewrite of description + category", "10 ready-to-publish GBP posts", "Q&A drafted, photos prompted", "Visible local-pack lift in weeks"],
+      "why_works": "A 0–100 score is undeniable in an inbox. Pair it with the fix already drafted and the buyer just clicks publish."
+    },
+    {
+      "n": 3,
+      "title": "SiteSwap",
+      "tagline": "Side-by-Side Modern Redesign for Outdated Business Sites",
+      "category": "Web Modernization",
+      "color": "green",
+      "impact": "High",
+      "description": "Biggest TAM of the three. Scrape Google Maps for businesses that already have a website but it's old, slow, or non-mobile. AI generates a modern responsive replacement using their existing content. Cold email contains a side-by-side screenshot — their site today vs. the version we already built for them. Reuses the entire current stack — flips the filter from no-website to ugly-website.",
+      "flow": ["Scrape Old Sites via Google Maps", "AI Builds Modern Replacement", "Generate Side-by-Side Screenshot", "Cold Email — Visual Comparison"],
+      "subject_line": "Your website vs. the version we already built for you.",
+      "delivers": ["Modern responsive replacement site", "Existing content auto-migrated", "Side-by-side before/after screenshot", "One-click claim + publish", "Mobile + page-speed audit"],
+      "wins": ["Biggest TAM of the three", "Reuses the entire current stack", "Side-by-side screenshot is undeniable", "Flips filter from no-website to ugly-website", "Low-friction yes/no decision"],
+      "before_label": "Outdated 2010s Website",
+      "before_bullets": ["Slow load (6s+) on mobile", "Not responsive — pinch to zoom", "Broken contact form or no CTA", "Hideous typography + stock images", "Lost trust before any sale"],
+      "after_label": "The SiteSwap Platform",
+      "after_bullets": ["Modern responsive design", "Existing content auto-migrated", "Mobile-first, sub-2s load", "Clean CTA + working contact form", "Pre-built — owner just clicks claim"],
+      "why_works": "A side-by-side image of their site beside the modern one we already built makes the decision visual, not abstract."
+    }
+  ]
+}
