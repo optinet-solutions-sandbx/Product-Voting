@@ -5,6 +5,8 @@
 # Generated / temporary
 .tmp/
 *.log
+*.docx
+tools/build_ideas_docx.js
 
 # Python
 __pycache__/

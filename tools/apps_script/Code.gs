@@ -21,6 +21,21 @@ const SUBMITTER_ORDER = [
   "ralph", "ciri", "leo", "ivan", "john"
 ];
 
+/** Email → submitter slug. Used to reject self-votes server-side.
+ *  Keep in sync with the `email` field on each entry in data.js. */
+const SUBMITTER_EMAILS = {
+  "jose@optinetsolutions.com":     "jose",
+  "ian@optinetsolutions.com":      "ianjay",
+  "revo@optinetsolutions.com":     "revo",
+  "jas@optinetsolutions.com":      "jas",
+  "cathylyn@optinetsolutions.com": "cathy",
+  "raphael@optinetsolutions.com":  "ralph",
+  "cirilo@optinetsolutions.com":   "ciri",
+  "leo@optinetsolutions.com":      "leo",
+  "ivan@optinetsolutions.com":     "ivan",
+  "john@optinetsolutions.com":     "john"
+};
+
 /** Sheet tab name */
 const SHEET_NAME = "Ballots";
 
@@ -254,7 +269,15 @@ function doPost(e) {
       return jsonResponse_({ success: false, error: "Email domain not allowed" });
     }
 
+    /* If this voter is themselves a submitter, drop any vote they've sent
+       for their own slot and skip the missing-vote check for it. */
+    const ownSlug = SUBMITTER_EMAILS[email] || null;
+    if (ownSlug && votes[ownSlug]) {
+      delete votes[ownSlug];
+    }
+
     for (const slug of SUBMITTER_ORDER) {
+      if (slug === ownSlug) continue;
       if (!votes[slug]) {
         return jsonResponse_({ success: false, error: "Missing vote for " + slug });
       }

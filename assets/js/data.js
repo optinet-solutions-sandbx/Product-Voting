@@ -2,12 +2,17 @@
    When a person's images are generated and dropped into assets/img/<slug>/,
    they are surfaced in the lightbox. The unexpanded card is built from the
    per-idea bullets/teaser/subjectLine fields below.
-   Slot 10 is held for the last submission still pending.                */
+   Slot 10 is held for the last submission still pending.
+
+   `email` is used to recognize a submitter when they sign in, so their own
+   ideas are hidden from them on the ballot. Adjust if any submitter logs in
+   with a different address.                                                */
 window.SUBMITTERS = [
   /* ============================ JOSE ================================ */
   {
     id: "jose",
     name: "Jose",
+    email: "jose@optinetsolutions.com",
     role: "Healthcare + Marketplace",
     pending: false,
     ideas: [
@@ -42,6 +47,7 @@ window.SUBMITTERS = [
   {
     id: "ianjay",
     name: "Ian Jay",
+    email: "ian@optinetsolutions.com",
     role: "iGaming Strategy",
     pending: false,
     ideas: [
@@ -76,6 +82,7 @@ window.SUBMITTERS = [
   {
     id: "revo",
     name: "Revo",
+    email: "revo@optinetsolutions.com",
     role: "Web Platform",
     pending: false,
     ideas: [
@@ -110,6 +117,7 @@ window.SUBMITTERS = [
   {
     id: "jas",
     name: "Jas",
+    email: "jas@optinetsolutions.com",
     role: "Vertical SaaS",
     pending: false,
     ideas: [
@@ -144,6 +152,7 @@ window.SUBMITTERS = [
   {
     id: "cathy",
     name: "Cathy",
+    email: "cathylyn@optinetsolutions.com",
     role: "Marketing Systems",
     pending: false,
     ideas: [
@@ -178,6 +187,7 @@ window.SUBMITTERS = [
   {
     id: "ralph",
     name: "Ralph",
+    email: "raphael@optinetsolutions.com",
     role: "Local Business Automation",
     pending: false,
     ideas: [
@@ -212,6 +222,7 @@ window.SUBMITTERS = [
   {
     id: "ciri",
     name: "Ciri",
+    email: "cirilo@optinetsolutions.com",
     role: "Local Business Automation",
     pending: false,
     ideas: [
@@ -246,6 +257,7 @@ window.SUBMITTERS = [
   {
     id: "leo",
     name: "Leo",
+    email: "leo@optinetsolutions.com",
     role: "Revenue Engineering",
     pending: false,
     ideas: [
@@ -280,6 +292,7 @@ window.SUBMITTERS = [
   {
     id: "ivan",
     name: "Ivan",
+    email: "ivan@optinetsolutions.com",
     role: "Vertical SaaS",
     pending: false,
     ideas: [
@@ -314,6 +327,7 @@ window.SUBMITTERS = [
   {
     id: "john",
     name: "John",
+    email: "john@optinetsolutions.com",
     role: "Automated Services",
     pending: false,
     ideas: [

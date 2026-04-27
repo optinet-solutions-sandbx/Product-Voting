@@ -1,6 +1,9 @@
-/* Voting dashboard — selection state + render + ballot recording per voter.
-   Cards now show a hero pitch image, a numbered badge, and open the full
-   pitch in a lightbox. Pending submitters render as placeholder slots.   */
+/* Voting dashboard — anonymized flat ballot.
+   Names are hidden from the UI; submitter ownership is preserved in the
+   underlying state so we can:
+     1. Hide the voter's own three products from their ballot.
+     2. Enforce a "1 vote per submitter" railguard without naming names.
+                                                                          */
 (function () {
   "use strict";
 
@@ -11,17 +14,47 @@
   if (!user) return;
 
   /* ------------------------------------------------------------------
-     Per-voter draft + total (excludes pending submitters).
+     Resolve which submitter (if any) belongs to the signed-in voter so
+     we can drop their own products from the ballot.
+     ------------------------------------------------------------------ */
+  const submitters = window.SUBMITTERS;
+  function ownSubmitterId(email) {
+    const e = String(email || "").toLowerCase().trim();
+    for (const s of submitters) {
+      if (s.email && String(s.email).toLowerCase() === e) return s.id;
+    }
+    return null;
+  }
+  const ownId = ownSubmitterId(user.email);
+
+  const eligibleSubmitters = submitters.filter(s => !s.pending && s.id !== ownId);
+  const total = eligibleSubmitters.length;
+
+  /* Build a flattened, interleaved deck of ideas. Round-robin across
+     submitters so two products from the same person are never adjacent. */
+  function buildDeck() {
+    const deck = [];
+    const maxLen = eligibleSubmitters.reduce((m, s) => Math.max(m, s.ideas.length), 0);
+    for (let i = 0; i < maxLen; i++) {
+      eligibleSubmitters.forEach(s => {
+        if (s.ideas[i]) deck.push({ ...s.ideas[i], submitterId: s.id });
+      });
+    }
+    return deck;
+  }
+  const deck = buildDeck();
+
+  /* ------------------------------------------------------------------
+     Per-voter draft (votes keyed by submitterId)
      ------------------------------------------------------------------ */
   const DRAFT_KEY = `aie.draft.${user.email}`;
-  const submitters = window.SUBMITTERS;
-  const activeSubmitters = submitters.filter(s => !s.pending);
-  const total = activeSubmitters.length;
-
   function loadDraft() {
     try {
       const raw = localStorage.getItem(DRAFT_KEY);
-      return raw ? JSON.parse(raw) : {};
+      const d = raw ? JSON.parse(raw) : {};
+      /* Drop any drafted vote for the voter's own ideas (defensive). */
+      if (ownId && d[ownId]) delete d[ownId];
+      return d;
     } catch { return {}; }
   }
   function saveDraft(d) {
@@ -31,8 +64,6 @@
     try { localStorage.removeItem(DRAFT_KEY); } catch {}
   }
 
-  /* Lock check: if backend is configured, see if this email already voted
-     OR if voting has closed entirely. */
   const state = {
     votes: loadDraft(),
     locked: false
@@ -52,20 +83,65 @@
     } catch {}
   })();
 
-  function selectIdea(submitterId, ideaId) {
-    if (state.locked) return;
-    state.votes[submitterId] = ideaId;
-    saveDraft(state.votes);
-    render();
-  }
-
   function castCount() {
-    return activeSubmitters.filter(s => state.votes[s.id]).length;
+    return eligibleSubmitters.filter(s => state.votes[s.id]).length;
   }
   function pad2(n) { return String(n).padStart(2, "0"); }
 
-  /* Numbered glyphs for the image badge. */
-  const numGlyph = ["①", "②", "③"];
+  /* ------------------------------------------------------------------
+     Selection handler with 1-per-submitter railguard
+     ------------------------------------------------------------------ */
+  let warnTimer = null;
+  function showWarning(msg) {
+    const el = document.getElementById("vote-warning");
+    if (!el) return;
+    el.querySelector(".vote-warning-text").textContent = msg;
+    el.dataset.show = "true";
+    if (warnTimer) clearTimeout(warnTimer);
+    warnTimer = setTimeout(() => { el.dataset.show = "false"; }, 4500);
+  }
+  function hideWarning() {
+    const el = document.getElementById("vote-warning");
+    if (el) el.dataset.show = "false";
+  }
+
+  function selectIdea(submitterId, ideaId) {
+    if (state.locked) return;
+
+    const current = state.votes[submitterId];
+
+    /* Click the same card again → deselect. */
+    if (current === ideaId) {
+      delete state.votes[submitterId];
+      saveDraft(state.votes);
+      hideWarning();
+      render();
+      return;
+    }
+
+    /* Different idea, same submitter → railguard, do not change vote. */
+    if (current && current !== ideaId) {
+      showWarning("Only 1 product per person — you've already voted for one of this submitter's products. Please pick from a different submitter, or unselect your previous choice first.");
+      flashLockedCard(submitterId, current);
+      return;
+    }
+
+    /* Fresh selection. */
+    state.votes[submitterId] = ideaId;
+    saveDraft(state.votes);
+    hideWarning();
+    render();
+  }
+
+  /* Briefly highlight the user's existing pick so they can find/unselect it. */
+  function flashLockedCard(submitterId, ideaId) {
+    const el = document.querySelector(`.idea[data-submitter-id="${submitterId}"][data-idea-id="${ideaId}"]`);
+    if (!el) return;
+    el.classList.remove("idea-flash");
+    void el.offsetWidth;
+    el.classList.add("idea-flash");
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
 
   /* ------------------------------------------------------------------
      Render
@@ -76,30 +152,8 @@
     }[c]));
   }
 
-  function renderPending(s, idx) {
-    return `
-      <article class="submitter" data-pending="true" id="s-${s.id}">
-        <header class="submitter-rail">
-          <div class="submitter-index">${pad2(idx + 1)}</div>
-          <div>
-            <div class="submitter-name">Awaiting submission</div>
-            <div class="submitter-role">— pending —</div>
-          </div>
-          <div class="submitter-status">
-            <span class="dot"></span>
-            <span>Slot reserved</span>
-          </div>
-        </header>
-        <div class="submitter-pending">
-          <span>Submission pending.</span>
-          <span>Once received, three pitch cards will appear here.</span>
-        </div>
-      </article>
-    `;
-  }
-
-  function renderIdeaCard(idea, i, submitterId, choice) {
-    const selected = choice === idea.id;
+  function renderCard(idea, i) {
+    const selected = state.votes[idea.submitterId] === idea.id;
     const tagline = idea.tagline ? `<div class="idea-tagline">${escapeHtml(idea.tagline)}</div>` : "";
     const teaser = idea.teaser
       ? `<p class="idea-teaser">${escapeHtml(idea.teaser)}</p>`
@@ -118,8 +172,8 @@
       : "";
 
     return `
-      <label class="idea" data-selected="${selected}" data-idea-id="${idea.id}" data-submitter-id="${submitterId}">
-        <input type="radio" name="vote-${submitterId}" value="${idea.id}" ${selected ? "checked" : ""} ${state.locked ? "disabled" : ""} />
+      <label class="idea" data-selected="${selected}" data-idea-id="${idea.id}" data-submitter-id="${idea.submitterId}">
+        <input type="radio" name="vote-${idea.submitterId}" value="${idea.id}" ${selected ? "checked" : ""} ${state.locked ? "disabled" : ""} />
         <div class="idea-body">
           <div class="idea-card-head">
             <span class="idea-bignum">${pad2(i + 1)}</span>
@@ -141,36 +195,9 @@
     `;
   }
 
-  function renderActive(s, idx) {
-    const choice = state.votes[s.id];
-    const voted = !!choice;
-    const ideas = s.ideas.map((idea, i) => renderIdeaCard(idea, i, s.id, choice)).join("");
-    const role = s.role ? `<div class="submitter-role">${escapeHtml(s.role)}</div>` : "";
-    return `
-      <article class="submitter" data-voted="${voted}" id="s-${s.id}">
-        <header class="submitter-rail">
-          <div class="submitter-index">${pad2(idx + 1)}</div>
-          <div>
-            <div class="submitter-name">${escapeHtml(s.name)}</div>
-            ${role}
-          </div>
-          <div class="submitter-status">
-            <span class="dot"></span>
-            <span>${voted ? "Vote cast" : "Awaiting vote"}</span>
-          </div>
-        </header>
-        <div class="ideas">${ideas}</div>
-      </article>
-    `;
-  }
-
-  function renderSubmitter(s, idx) {
-    return s.pending ? renderPending(s, idx) : renderActive(s, idx);
-  }
-
   function render() {
     const root = document.getElementById("submitters");
-    root.innerHTML = submitters.map(renderSubmitter).join("");
+    root.innerHTML = `<div class="ideas-flat">${deck.map(renderCard).join("")}</div>`;
 
     const cast = castCount();
     document.getElementById("progress-count").textContent =
@@ -178,10 +205,7 @@
     document.getElementById("progress-fill").style.width =
       `${total ? (cast / total) * 100 : 0}%`;
 
-    /* Submit is only ready when every slot is filled (no pending) and every
-       active submitter has been voted on. */
-    const allFilled = submitters.length === total;
-    const ready = allFilled && total > 0 && cast === total;
+    const ready = total > 0 && cast === total;
     const btn = document.getElementById("submit-btn");
     btn.dataset.ready = ready && !state.locked;
     btn.disabled = !(ready && !state.locked);
@@ -195,12 +219,14 @@
     } else if (ready) {
       status.innerHTML = `<span style="color:var(--gold)">●</span> All votes cast — <strong>ready to submit</strong>`;
     } else {
-      const pendingCount = submitters.length - total;
-      const tail = pendingCount
-        ? ` · <span style="color:var(--bone-faint)">${pendingCount} slot${pendingCount === 1 ? "" : "s"} pending</span>`
-        : "";
-      status.innerHTML = `<strong>${cast}</strong> of ${total} voted${tail}`;
+      status.innerHTML = `<strong>${cast}</strong> of ${total} voted`;
     }
+
+    /* Update sidebar meta if present. */
+    const heroTotal = document.getElementById("hero-total-products");
+    if (heroTotal) heroTotal.textContent = String(deck.length);
+    const heroVotes = document.getElementById("hero-required-votes");
+    if (heroVotes) heroVotes.textContent = `${total} required`;
 
     document.querySelectorAll(".idea").forEach(el => {
       el.addEventListener("click", evt => {
@@ -216,7 +242,6 @@
         evt.stopPropagation();
         openLightbox(el.dataset.zoom, el.dataset.zoomTitle, el.dataset.zoomTag);
       });
-      /* Preload the full pitch on hover so the lightbox snaps open. */
       let preloaded = false;
       const prefetch = () => {
         if (preloaded) return;
@@ -262,9 +287,13 @@
     btn.disabled = true;
     btn.innerHTML = `Submitting <span class="arrow">...</span>`;
 
+    /* Defense in depth: never submit a vote for the voter's own slot. */
+    const cleanVotes = { ...state.votes };
+    if (ownId) delete cleanVotes[ownId];
+
     const result = await window.Auth.submitBallot(user.email, {
       name: user.name,
-      votes: { ...state.votes }
+      votes: cleanVotes
     });
 
     if (!result.success) {
@@ -282,8 +311,6 @@
   }
   async function closeModal() {
     document.getElementById("modal").dataset.open = "false";
-    /* If the user's ballot was the one that closed voting, jump straight to
-       the results page; otherwise show the prize hype page. */
     try {
       const status = await window.Auth.votingStatus();
       window.location.href = status && status.closed ? "results.html" : "prize.html";
@@ -315,7 +342,9 @@
       if (e.target.id === "modal") closeModal();
     });
 
-    /* Lightbox handlers */
+    const dismiss = document.getElementById("vote-warning-dismiss");
+    if (dismiss) dismiss.addEventListener("click", hideWarning);
+
     const lb = document.getElementById("lightbox");
     if (lb) {
       lb.addEventListener("click", e => {

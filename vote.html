@@ -37,18 +37,25 @@
   <section class="container vote-hero">
     <div>
       <div class="eyebrow">Weekend Challenge · Voting round · Closes Monday 17:00</div>
-      <h1>Pick the strongest idea<br />from each of <em>your ten teammates.</em></h1>
-      <p style="color: var(--bone-dim); margin-top: 1.5rem; max-width: 52ch; font-size: 0.98rem;">Thirty ideas were submitted. Your ten picks roll up into the team's top ten — and that's what we build. The €1,000 lands when the first idea on the list earns its first paying customer.</p>
+      <h1>Pick the strongest <em>products.</em></h1>
+      <p style="color: var(--bone-dim); margin-top: 1.5rem; max-width: 52ch; font-size: 0.98rem;">Names are hidden — judge the products on their own merit. One vote per submitter. Your picks roll up into the team's shortlist, and the €1,000 lands when the first idea on the list earns its first paying customer.</p>
     </div>
     <aside class="vote-hero-meta">
-      <div class="row"><span>Submitters</span><strong>10</strong></div>
-      <div class="row"><span>Total ideas</span><strong>30</strong></div>
-      <div class="row"><span>Your votes</span><strong>10 required</strong></div>
+      <div class="row"><span>Total products</span><strong id="hero-total-products">—</strong></div>
+      <div class="row"><span>Your votes</span><strong id="hero-required-votes">—</strong></div>
+      <div class="row"><span>Rule</span><strong>1 per submitter</strong></div>
       <div class="row"><span>Prize</span><a href="prize.html" style="color:var(--gold)">€1,000 cash →</a></div>
     </aside>
   </section>
 
-  <!-- ================== Submitters ================== -->
+  <!-- ================== Railguard toast ================== -->
+  <div class="vote-warning" id="vote-warning" data-show="false" role="alert" aria-live="polite">
+    <span class="vote-warning-icon" aria-hidden="true">!</span>
+    <span class="vote-warning-text">Only 1 product per person.</span>
+    <button type="button" class="vote-warning-dismiss" id="vote-warning-dismiss" aria-label="Dismiss">×</button>
+  </div>
+
+  <!-- ================== Products ================== -->
   <main class="container">
     <div class="submitters" id="submitters" aria-live="polite"></div>
   </main>
@@ -56,7 +63,7 @@
   <!-- ================== Footer ================== -->
   <footer class="container footnote">
     <span>AI Engineering · Weekend Challenge 2026</span>
-    <span>One vote per colleague · Editable until lock-in</span>
+    <span>1 product per submitter · Editable until lock-in</span>
     <a class="utility-link" href="prize.html">See the prize <span class="arrow">→</span></a>
   </footer>
 
