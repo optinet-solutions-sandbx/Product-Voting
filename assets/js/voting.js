@@ -1,9 +1,9 @@
-/* Voting dashboard — anonymized flat ballot.
-   Names are hidden from the UI; submitter ownership is preserved in the
-   underlying state so we can:
-     1. Hide the voter's own three products from their ballot.
-     2. Enforce a "1 vote per submitter" railguard without naming names.
-                                                                          */
+/* Voting dashboard — anonymized per-row ballot.
+   Each row groups one submitter's three products together (so the
+   "1 product per submitter" rule is visually obvious) but the
+   submitter's name and role are hidden. Row order is a deterministic
+   shuffle seeded from the voter's email — same voter sees the same
+   order on reload, different voters see different orderings.        */
 (function () {
   "use strict";
 
@@ -14,8 +14,8 @@
   if (!user) return;
 
   /* ------------------------------------------------------------------
-     Resolve which submitter (if any) belongs to the signed-in voter so
-     we can drop their own products from the ballot.
+     Resolve the voter's own submitter slot (if they have one) so we
+     can drop their three products from the ballot.
      ------------------------------------------------------------------ */
   const submitters = window.SUBMITTERS;
   function ownSubmitterId(email) {
@@ -27,22 +27,33 @@
   }
   const ownId = ownSubmitterId(user.email);
 
-  const eligibleSubmitters = submitters.filter(s => !s.pending && s.id !== ownId);
-  const total = eligibleSubmitters.length;
-
-  /* Build a flattened, interleaved deck of ideas. Round-robin across
-     submitters so two products from the same person are never adjacent. */
-  function buildDeck() {
-    const deck = [];
-    const maxLen = eligibleSubmitters.reduce((m, s) => Math.max(m, s.ideas.length), 0);
-    for (let i = 0; i < maxLen; i++) {
-      eligibleSubmitters.forEach(s => {
-        if (s.ideas[i]) deck.push({ ...s.ideas[i], submitterId: s.id });
-      });
+  /* ------------------------------------------------------------------
+     Deterministic per-voter shuffle (djb2 → LCG).
+     ------------------------------------------------------------------ */
+  function seedFromEmail(email) {
+    let h = 5381;
+    const s = String(email || "").toLowerCase();
+    for (let i = 0; i < s.length; i++) {
+      h = ((h << 5) + h) + s.charCodeAt(i);
+      h |= 0;
     }
-    return deck;
+    return Math.abs(h) || 1;
   }
-  const deck = buildDeck();
+  function shuffleSeeded(arr, seed) {
+    const a = arr.slice();
+    let x = seed;
+    for (let i = a.length - 1; i > 0; i--) {
+      x = (x * 1103515245 + 12345) & 0x7fffffff;
+      const j = x % (i + 1);
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  const eligibleSubmitters = submitters.filter(s => !s.pending && s.id !== ownId);
+  const orderedSubmitters = shuffleSeeded(eligibleSubmitters, seedFromEmail(user.email));
+  const total = orderedSubmitters.length;
+  const totalProducts = orderedSubmitters.reduce((n, s) => n + s.ideas.length, 0);
 
   /* ------------------------------------------------------------------
      Per-voter draft (votes keyed by submitterId)
@@ -52,7 +63,6 @@
     try {
       const raw = localStorage.getItem(DRAFT_KEY);
       const d = raw ? JSON.parse(raw) : {};
-      /* Drop any drafted vote for the voter's own ideas (defensive). */
       if (ownId && d[ownId]) delete d[ownId];
       return d;
     } catch { return {}; }
@@ -64,10 +74,7 @@
     try { localStorage.removeItem(DRAFT_KEY); } catch {}
   }
 
-  const state = {
-    votes: loadDraft(),
-    locked: false
-  };
+  const state = { votes: loadDraft(), locked: false };
 
   (async () => {
     try {
@@ -83,77 +90,33 @@
     } catch {}
   })();
 
-  function castCount() {
-    return eligibleSubmitters.filter(s => state.votes[s.id]).length;
-  }
-  function pad2(n) { return String(n).padStart(2, "0"); }
-
-  /* ------------------------------------------------------------------
-     Selection handler with 1-per-submitter railguard
-     ------------------------------------------------------------------ */
-  let warnTimer = null;
-  function showWarning(msg) {
-    const el = document.getElementById("vote-warning");
-    if (!el) return;
-    el.querySelector(".vote-warning-text").textContent = msg;
-    el.dataset.show = "true";
-    if (warnTimer) clearTimeout(warnTimer);
-    warnTimer = setTimeout(() => { el.dataset.show = "false"; }, 4500);
-  }
-  function hideWarning() {
-    const el = document.getElementById("vote-warning");
-    if (el) el.dataset.show = "false";
-  }
-
+  /* Click another card in the same row → silently swap. Clicking the
+     already-selected card → deselect. The row layout itself enforces
+     "1 vote per submitter" so no toast is needed. */
   function selectIdea(submitterId, ideaId) {
     if (state.locked) return;
-
-    const current = state.votes[submitterId];
-
-    /* Click the same card again → deselect. */
-    if (current === ideaId) {
+    if (state.votes[submitterId] === ideaId) {
       delete state.votes[submitterId];
-      saveDraft(state.votes);
-      hideWarning();
-      render();
-      return;
+    } else {
+      state.votes[submitterId] = ideaId;
     }
-
-    /* Different idea, same submitter → railguard, do not change vote. */
-    if (current && current !== ideaId) {
-      showWarning("Only 1 product per person — you've already voted for one of this submitter's products. Please pick from a different submitter, or unselect your previous choice first.");
-      flashLockedCard(submitterId, current);
-      return;
-    }
-
-    /* Fresh selection. */
-    state.votes[submitterId] = ideaId;
     saveDraft(state.votes);
-    hideWarning();
     render();
   }
 
-  /* Briefly highlight the user's existing pick so they can find/unselect it. */
-  function flashLockedCard(submitterId, ideaId) {
-    const el = document.querySelector(`.idea[data-submitter-id="${submitterId}"][data-idea-id="${ideaId}"]`);
-    if (!el) return;
-    el.classList.remove("idea-flash");
-    void el.offsetWidth;
-    el.classList.add("idea-flash");
-    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  function castCount() {
+    return orderedSubmitters.filter(s => state.votes[s.id]).length;
   }
+  function pad2(n) { return String(n).padStart(2, "0"); }
 
-  /* ------------------------------------------------------------------
-     Render
-     ------------------------------------------------------------------ */
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
     }[c]));
   }
 
-  function renderCard(idea, i) {
-    const selected = state.votes[idea.submitterId] === idea.id;
+  function renderIdeaCard(idea, i, submitterId, choice) {
+    const selected = choice === idea.id;
     const tagline = idea.tagline ? `<div class="idea-tagline">${escapeHtml(idea.tagline)}</div>` : "";
     const teaser = idea.teaser
       ? `<p class="idea-teaser">${escapeHtml(idea.teaser)}</p>`
@@ -172,8 +135,8 @@
       : "";
 
     return `
-      <label class="idea" data-selected="${selected}" data-idea-id="${idea.id}" data-submitter-id="${idea.submitterId}">
-        <input type="radio" name="vote-${idea.submitterId}" value="${idea.id}" ${selected ? "checked" : ""} ${state.locked ? "disabled" : ""} />
+      <label class="idea" data-selected="${selected}" data-idea-id="${idea.id}" data-submitter-id="${submitterId}">
+        <input type="radio" name="vote-${submitterId}" value="${idea.id}" ${selected ? "checked" : ""} ${state.locked ? "disabled" : ""} />
         <div class="idea-body">
           <div class="idea-card-head">
             <span class="idea-bignum">${pad2(i + 1)}</span>
@@ -195,9 +158,31 @@
     `;
   }
 
+  function renderRow(s, idx) {
+    const choice = state.votes[s.id];
+    const voted = !!choice;
+    const ideas = s.ideas.map((idea, i) => renderIdeaCard(idea, i, s.id, choice)).join("");
+    return `
+      <article class="submitter submitter-anon" data-voted="${voted}" id="s-${s.id}">
+        <header class="submitter-rail">
+          <div class="submitter-index">${pad2(idx + 1)}</div>
+          <div class="submitter-anonhead">
+            <div class="submitter-anonlabel">Pick one</div>
+            <div class="submitter-anonsub">3 products · 1 vote</div>
+          </div>
+          <div class="submitter-status">
+            <span class="dot"></span>
+            <span>${voted ? "Vote cast" : "Awaiting vote"}</span>
+          </div>
+        </header>
+        <div class="ideas">${ideas}</div>
+      </article>
+    `;
+  }
+
   function render() {
     const root = document.getElementById("submitters");
-    root.innerHTML = `<div class="ideas-flat">${deck.map(renderCard).join("")}</div>`;
+    root.innerHTML = orderedSubmitters.map(renderRow).join("");
 
     const cast = castCount();
     document.getElementById("progress-count").textContent =
@@ -222,9 +207,8 @@
       status.innerHTML = `<strong>${cast}</strong> of ${total} voted`;
     }
 
-    /* Update sidebar meta if present. */
     const heroTotal = document.getElementById("hero-total-products");
-    if (heroTotal) heroTotal.textContent = String(deck.length);
+    if (heroTotal) heroTotal.textContent = String(totalProducts);
     const heroVotes = document.getElementById("hero-required-votes");
     if (heroVotes) heroVotes.textContent = `${total} required`;
 
@@ -287,7 +271,6 @@
     btn.disabled = true;
     btn.innerHTML = `Submitting <span class="arrow">...</span>`;
 
-    /* Defense in depth: never submit a vote for the voter's own slot. */
     const cleanVotes = { ...state.votes };
     if (ownId) delete cleanVotes[ownId];
 
@@ -341,9 +324,6 @@
     document.getElementById("modal").addEventListener("click", e => {
       if (e.target.id === "modal") closeModal();
     });
-
-    const dismiss = document.getElementById("vote-warning-dismiss");
-    if (dismiss) dismiss.addEventListener("click", hideWarning);
 
     const lb = document.getElementById("lightbox");
     if (lb) {

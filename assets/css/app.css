@@ -284,94 +284,37 @@ button {
    ===================================================================== */
 
 .submitters {
-  padding: 3rem 0 8rem;
+  padding: 4rem 0 8rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 5rem;
 }
 
-/* Anonymized flat product grid (3-up, then 2-up, then 1-up). */
-.ideas-flat {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-@media (max-width: 1080px) {
-  .ideas-flat { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 720px) {
-  .ideas-flat { grid-template-columns: 1fr; }
-}
-
-/* Briefly highlight a card when the railguard fires. */
-@keyframes ideaFlash {
-  0%   { box-shadow: 0 0 0 0 rgba(184, 144, 47, 0); border-color: var(--gold); }
-  30%  { box-shadow: 0 0 0 6px rgba(184, 144, 47, 0.28); border-color: var(--gold); }
-  100% { box-shadow: 0 0 0 0 rgba(184, 144, 47, 0); }
-}
-.idea.idea-flash { animation: ideaFlash 1.4s var(--transition); }
-
-/* Railguard toast */
-.vote-warning {
-  position: fixed;
-  top: 88px;
-  left: 50%;
-  transform: translate(-50%, -12px);
-  z-index: 45;
-  background: var(--ink-2);
-  border: 1px solid var(--rust);
-  border-left: 4px solid var(--rust);
-  border-radius: 4px;
-  padding: 0.85rem 2.6rem 0.85rem 1rem;
-  display: none;
-  align-items: center;
-  gap: 0.7rem;
-  max-width: min(560px, calc(100% - 2rem));
-  font-size: 0.9rem;
-  color: var(--bone);
-  line-height: 1.45;
-  box-shadow: 0 18px 50px -20px rgba(168, 62, 26, 0.35);
-  opacity: 0;
-  transition: opacity 0.25s var(--transition), transform 0.25s var(--transition);
-}
-.vote-warning[data-show="true"] {
+/* Anonymized rail header (replaces submitter name + role) */
+.submitter-anonhead {
   display: flex;
-  opacity: 1;
-  transform: translate(-50%, 0);
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
 }
-.vote-warning-icon {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--rust);
-  color: #ffffff;
+.submitter-anonlabel {
   font-family: var(--display);
+  font-size: 1.7rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--bone);
+}
+.submitter[data-voted="true"] .submitter-anonlabel {
+  color: var(--gold);
   font-style: italic;
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
-.vote-warning-text {
-  flex: 1;
-}
-.vote-warning-dismiss {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.5rem;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  font-size: 1rem;
+.submitter-anonsub {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--bone-faint);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s var(--transition);
 }
-.vote-warning-dismiss:hover { color: var(--bone); }
 
 .submitter {
   display: grid;
