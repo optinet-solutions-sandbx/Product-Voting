@@ -17,7 +17,7 @@
 
     <div class="login-art-titlewrap">
       <span class="login-art-eyebrow">Weekend Challenge · 2026</span>
-      <h1 class="login-art-title">Thirty ideas. <em>Ten get built.</em><br />One pays €1,000.</h1>
+      <h1 class="login-art-title">Thirty-three ideas. <em>Eleven get built.</em><br />One pays €1,000.</h1>
       <p class="login-art-prize"><strong>€1,000</strong> cash to whoever's idea lands the first paying customer.</p>
     </div>
 
@@ -36,7 +36,7 @@
 
     <form class="login-form" id="login-form" novalidate>
       <h2>Verify yourself.</h2>
-      <p class="lede">Sign in with your work credentials so we can record your ballot under your name. One vote per teammate, ten in total — the top ten go straight to build.</p>
+      <p class="lede">Sign in with your work credentials so we can record your ballot under your name. One vote per teammate — the eleven winners go straight to build.</p>
 
       <div class="field">
         <label for="name">Full Name</label>
@@ -125,7 +125,7 @@
           const formEl = document.getElementById("login-form");
           formEl.innerHTML = `
             <h2>The results are <em style="color:var(--gold);font-style:italic">in.</em></h2>
-            <p class="lede">Voting has closed. ${status.totalBallots} ballot${status.totalBallots === 1 ? "" : "s"} cast. The top ten ideas — one per teammate — are now live on the results page.</p>
+            <p class="lede">Voting has closed. ${status.totalBallots} ballot${status.totalBallots === 1 ? "" : "s"} cast. The eleven winning ideas — one per teammate — are now live on the results page.</p>
             <a class="login-submit" href="results.html" style="text-decoration:none; display:inline-flex;">
               View results <span class="arrow">→</span>
             </a>

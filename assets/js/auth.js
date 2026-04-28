@@ -147,10 +147,10 @@
         const json = await res.json();
         if (json && json.success) return json;
       } catch {}
-      return { open: true, closed: false, totalBallots: 0, expected: 10 };
+      return { open: true, closed: false, totalBallots: 0, expected: 11 };
     }
     const all = readJSON(BALLOTS_KEY, {});
-    return { open: true, closed: false, totalBallots: Object.keys(all).length, expected: 10 };
+    return { open: true, closed: false, totalBallots: Object.keys(all).length, expected: 11 };
   }
 
   /** Returns Promise<{ winners, tally, totalBallots, ... } | { error }>. */

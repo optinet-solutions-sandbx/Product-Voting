@@ -185,7 +185,7 @@
 
     /* If no backend, show the still-open state with localStorage data */
     if (!window.Auth.hasBackend()) {
-      renderStillOpen({ totalBallots: 0, expected: 10 });
+      renderStillOpen({ totalBallots: 0, expected: 11 });
       return;
     }
 

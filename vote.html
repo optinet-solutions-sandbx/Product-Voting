@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Engineering Weekend Challenge · Cast Your Vote</title>
-  <meta name="description" content="Pick the strongest idea from each of your colleagues. Ten votes. One winner. €1,000 prize." />
+  <meta name="description" content="Pick the strongest idea from each of your colleagues. One vote per row, eleven rows total. €1,000 cash prize." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="assets/css/app.css" />
@@ -20,7 +20,7 @@
       </div>
 
       <div class="topbar-progress">
-        <span class="pmono" id="progress-count">00 / 10</span>
+        <span class="pmono" id="progress-count">— / —</span>
         <div class="pbar" aria-hidden="true">
           <div class="pbar-fill" id="progress-fill"></div>
         </div>
@@ -63,7 +63,7 @@
   <!-- ================== Sticky submit bar ================== -->
   <div class="submit-bar" role="region" aria-label="Submit votes">
     <div class="submit-status" id="submit-status">
-      <strong>0</strong> of 10 colleagues voted
+      Loading ballot…
     </div>
     <button class="submit-btn" id="submit-btn" data-ready="false" disabled>
       Submit votes <span class="arrow">→</span>
@@ -88,7 +88,7 @@
     <div class="modal">
       <div class="modal-eyebrow">— Ballot recorded —</div>
       <h2 id="modal-title">Your vote is in.</h2>
-      <p id="modal-body">Logged under your name. The top 10 go to build straight after voting closes. The €1,000 lands when the first paying customer signs up — and you'll know whose idea did it.</p>
+      <p id="modal-body">Logged under your name. The eleven winners go to build straight after voting closes. The €1,000 lands when the first paying customer signs up — and you'll know whose idea did it.</p>
       <button class="modal-close" id="modal-close">View the prize →</button>
     </div>
   </div>
