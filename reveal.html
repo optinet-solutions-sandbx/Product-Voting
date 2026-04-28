@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineering Weekend Challenge · The Verdict</title>
+  <meta name="description" content="The 11 ideas the team is building." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">AI Engineering</span>
+        <span class="brand-text">Weekend Challenge · 2026</span>
+      </div>
+      <div></div>
+      <a class="topbar-link" href="prize.html">
+        The Prize <span class="arrow">→</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container reveal-hero">
+    <span class="eyebrow" id="reveal-eyebrow">— The verdict is in —</span>
+    <h1>Eleven ideas.<br /><em>Now we build.</em></h1>
+    <p class="lede" id="reveal-lede">
+      One winning idea per teammate — these are what we ship next week. The
+      <strong>€1,000</strong> lands when the first paying customer signs up.
+    </p>
+    <div class="reveal-stats">
+      <div class="reveal-stat">
+        <span class="num" id="stat-ballots">—</span>
+        <span class="label">Ballots cast</span>
+      </div>
+      <div class="reveal-stat">
+        <span class="num" id="stat-winners">11</span>
+        <span class="label">Ideas to build</span>
+      </div>
+      <div class="reveal-stat">
+        <span class="num">€1K</span>
+        <span class="label">In cash</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Podium — top 3 by vote count -->
+  <section class="container">
+    <div class="reveal-section-head">
+      <span class="reveal-section-eyebrow">— The top three —</span>
+      <h2>Most votes across the floor.</h2>
+    </div>
+    <div class="reveal-podium" id="reveal-podium">
+      <div class="reveal-loading">Loading…</div>
+    </div>
+  </section>
+
+  <!-- Remaining winners -->
+  <section class="container reveal-also">
+    <div class="reveal-section-head">
+      <span class="reveal-section-eyebrow">— Also building —</span>
+      <h2>The other eight.</h2>
+    </div>
+    <div class="reveal-grid" id="reveal-grid"></div>
+  </section>
+
+  <!-- Closing callout -->
+  <section class="container reveal-callout">
+    <p>From a Monday email to a real product. <em>The first invoice wins.</em></p>
+  </section>
+
+  <!-- Lightbox (full pitch) -->
+  <div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Full pitch view">
+    <div class="lightbox-frame">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+      <img id="lightbox-img" class="lightbox-img" alt="" />
+      <div class="lightbox-meta">
+        <span>— Full pitch —</span>
+        <strong id="lightbox-title"></strong>
+        <span id="lightbox-tag"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/reveal.js"></script>
+</body>
+</html>
