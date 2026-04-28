@@ -10,7 +10,11 @@
  *
  * Sheet structure (auto-created on first call):
  *   "Ballots" sheet
- *     timestamp | voter_email | voter_name | jose | ianjay | revo | jas | cathy | ralph | ciri | leo | ivan | john | chris
+ *     timestamp | voter_email | voter_name | jose | ianjay | revo | jas | cathy | ralph | sere | leo | ivan | john | chris
+ *   NOTE: existing sheets created before the Ciri→Sere rename keep a
+ *   `ciri` header at column 10. Data still flows to the same column
+ *   index, so the backend tallies correctly — but rename the header to
+ *   `sere` manually for clarity.
  */
 
 /* ===== CONFIG ============================================================ */
@@ -18,7 +22,7 @@
 /** Order of submitter slugs — MUST match window.SUBMITTERS in data.js */
 const SUBMITTER_ORDER = [
   "jose", "ianjay", "revo", "jas", "cathy",
-  "ralph", "ciri", "leo", "ivan", "john", "chris"
+  "ralph", "sere", "leo", "ivan", "john", "chris"
 ];
 
 /** Email → submitter slug. Used to reject self-votes server-side.
@@ -30,7 +34,7 @@ const SUBMITTER_EMAILS = {
   "jas@optinetsolutions.com":      "jas",
   "cathylyn@optinetsolutions.com": "cathy",
   "raphael@optinetsolutions.com":  "ralph",
-  "cirilo@optinetsolutions.com":   "ciri",
+  "sere@optinetsolutions.com":     "sere",
   "leo@optinetsolutions.com":      "leo",
   "ivan@optinetsolutions.com":     "ivan",
   "john@optinetsolutions.com":     "john",
@@ -277,11 +281,20 @@ function doPost(e) {
       delete votes[ownSlug];
     }
 
+    /* Anonymized: never reveal which submitter the vote is missing for —
+       the ballot is meant to be anonymous from the voter's POV. */
+    let missing = 0;
     for (const slug of SUBMITTER_ORDER) {
       if (slug === ownSlug) continue;
-      if (!votes[slug]) {
-        return jsonResponse_({ success: false, error: "Missing vote for " + slug });
-      }
+      if (!votes[slug]) missing++;
+    }
+    if (missing > 0) {
+      return jsonResponse_({
+        success: false,
+        error: missing === 1
+          ? "1 vote is missing — please complete the ballot."
+          : missing + " votes are missing — please complete the ballot."
+      });
     }
 
     const sheet = ensureSheet_();

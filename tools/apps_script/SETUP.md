@@ -47,11 +47,17 @@ That's it. Reload the voting page. Ballots now go to your sheet.
 A `Ballots` tab gets created on the first ballot, with columns:
 
 ```
-timestamp | voter_email | voter_name | jose | ianjay | revo | jas | cathy | ralph | ciri | leo | ivan | john
+timestamp | voter_email | voter_name | jose | ianjay | revo | jas | cathy | ralph | sere | leo | ivan | john | chris
 ```
 
 Each row = one ballot. Each cell under a submitter slug = the chosen
 idea_id (e.g. `jose-02`).
+
+> **If your sheet was created before the Ciri→Sere rename**, the
+> column at index 10 will still be labeled `ciri` even though new
+> ballots write Sere votes to it (data flows by column index, so the
+> backend tally is correct). Rename that header to `sere` manually for
+> clarity.
 
 ## How to read results
 
