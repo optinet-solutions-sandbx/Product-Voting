@@ -95,12 +95,16 @@ Apps Script web apps are versioned. After editing the code:
 
 ## How voting closes (and shows results)
 
-Voting auto-closes when ANY of these is true (whichever hits first):
+Voting closes ONLY by the timer (or manual override):
 
-1. **Quorum** — `EXPECTED_VOTERS` (default 10) ballots have been cast
-2. **24-hour window** — current time is past `STARTS_AT + WINDOW_HOURS`
-   (default 24h). Set `STARTS_AT = ""` to disable the deadline trigger.
-3. **Manual** — flip `FORCE_CLOSED = true` and redeploy a new version
+1. **24-hour window** — current time is past `STARTS_AT + WINDOW_HOURS`
+   (default 24h). If `STARTS_AT` is unset, voting stays open indefinitely
+   — start the timer with `?action=start&token=…` before going live.
+2. **Manual** — flip `FORCE_CLOSED = true` and redeploy a new version
+
+There is no quorum-based close. Anyone can vote (not just the 11 named
+submitters), and the count alone never ends the round. `EXPECTED_VOTERS`
+remains as a soft target for copy but does not trigger closure.
 
 ### Starting the 24-hour countdown
 

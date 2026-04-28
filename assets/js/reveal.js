@@ -213,10 +213,12 @@
   function renderStillOpen(state) {
     document.getElementById("reveal-eyebrow").textContent = "— Voting still open —";
     document.querySelector(".reveal-hero h1").innerHTML = `Results aren't<br /><em>in yet.</em>`;
+    const cast = state.totalBallots || 0;
+    const ballotWord = cast === 1 ? "ballot" : "ballots";
     document.getElementById("reveal-lede").innerHTML =
-      `${state.totalBallots || 0} of ${state.expected || 11} ballots cast so far. ` +
-      `Once everyone votes, the top three light up here.`;
-    document.getElementById("stat-ballots").textContent = pad2(state.totalBallots || 0);
+      `${cast} ${ballotWord} cast so far. ` +
+      `When the timer runs out, the winners light up here.`;
+    document.getElementById("stat-ballots").textContent = pad2(cast);
     document.getElementById("reveal-podium").innerHTML = `
       <div class="reveal-loading-cta">
         <a href="vote.html" class="topbar-link" style="display:inline-flex;">

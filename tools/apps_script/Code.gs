@@ -60,11 +60,13 @@ const ALLOWED_EMAIL_DOMAINS = []; // e.g. ["optinetsolutions.com"]
  *    1. Hit GET ?action=start&token=ADMIN_TOKEN  (records "now")
  *    2. Project Settings → Script Properties → set STARTS_AT manually
  *
- *  Voting closes WINDOW_HOURS after STARTS_AT — automatically. If STARTS_AT
- *  is unset, the deadline trigger is disabled (voting stays open until
- *  quorum / EXPECTED_VOTERS ballots / FORCE_CLOSED). */
+ *  Voting closes WINDOW_HOURS after STARTS_AT — automatically. There is
+ *  NO quorum-based close: anyone can vote, including past EXPECTED_VOTERS,
+ *  and the count alone never ends the round. The only ways to close are
+ *  the deadline or FORCE_CLOSED. If STARTS_AT is unset, voting stays
+ *  open indefinitely — make sure to hit the start endpoint. */
 const WINDOW_HOURS = 24;
-const EXPECTED_VOTERS = 11;
+const EXPECTED_VOTERS = 11;  // soft target shown in copy; not a close trigger
 const FORCE_CLOSED = false;
 
 function getStartsAt_() {
@@ -118,16 +120,15 @@ function computedClosesAt_() {
 function votingState_(rows) {
   rows = rows || readBallotRows_();
   const totalBallots = rows.length;
-  const reachedQuorum = totalBallots >= EXPECTED_VOTERS;
   const startsAt = getStartsAt_();
   const closesAt = computedClosesAt_();
   const pastDeadline = closesAt && new Date() >= closesAt;
-  const closed = FORCE_CLOSED || reachedQuorum || pastDeadline;
+  /* Closure is timer-only (or admin-forced). Hitting the soft expected
+     count never ends the round — extra voters past 11 are welcome. */
+  const closed = FORCE_CLOSED || pastDeadline;
   let reason = null;
   if (closed) {
-    reason = FORCE_CLOSED ? "manual"
-           : reachedQuorum ? "all_voted"
-           : "deadline";
+    reason = FORCE_CLOSED ? "manual" : "deadline";
   }
   return {
     open: !closed,

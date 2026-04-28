@@ -58,12 +58,12 @@
   function renderStillOpen(state) {
     const root = document.getElementById("results-root");
     const cast = state.totalBallots || 0;
-    const expected = state.expected || 10;
+    const ballotWord = cast === 1 ? "ballot" : "ballots";
     document.getElementById("results-eyebrow").textContent = "— Voting still open —";
     document.querySelector(".results-hero h1").innerHTML =
       `Results aren't<br /><em>in yet.</em>`;
     document.getElementById("results-lede").textContent =
-      `${cast} of ${expected} ballots cast so far. Once everyone votes, this page reveals the winning idea per teammate.`;
+      `${cast} ${ballotWord} cast so far. When the timer runs out, this page reveals the winning idea per teammate.`;
     document.getElementById("stat-ballots").textContent = pad2(cast);
 
     root.innerHTML = `
