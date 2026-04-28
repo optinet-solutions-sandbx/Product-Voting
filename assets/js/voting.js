@@ -161,7 +161,13 @@
   function renderRow(s, idx) {
     const choice = state.votes[s.id];
     const voted = !!choice;
-    const ideas = s.ideas.map((idea, i) => renderIdeaCard(idea, i, s.id, choice)).join("");
+    /* Shuffle the 3 ideas per (voter, submitter) pair — same voter sees
+       the same order on reload, but different voters see different
+       orderings even within the same row. Card position (01/02/03) no
+       longer leaks "this is the submitter's first idea". */
+    const rowSeed = seedFromEmail(user.email + ":" + s.id);
+    const shuffledIdeas = shuffleSeeded(s.ideas, rowSeed);
+    const ideas = shuffledIdeas.map((idea, i) => renderIdeaCard(idea, i, s.id, choice)).join("");
     return `
       <article class="submitter submitter-anon" data-voted="${voted}" id="s-${s.id}">
         <header class="submitter-rail">
