@@ -43,21 +43,21 @@
     },
     {
       "n": 3,
-      "title": "SalonGBP",
-      "tagline": "Vertical-Native GBP Manager for Salons & Barbershops",
-      "category": "Local SEO",
+      "title": "List Liquidator",
+      "tagline": "AI-Verified Lead List Cleaning for B2B Sales Teams",
+      "category": "B2B Sales",
       "color": "green",
       "impact": "High",
-      "description": "Independent salons have stale GBPs — no posts in 8 months, unanswered customer questions, missing prices. Newer competitors two streets over post weekly and win every 'haircut near me' search. Auto-generates a 30-day refresh: 4 weekly posts, drafted answers, priced services, curated photos. One-click manager-invite, live within an hour.",
-      "flow": ["Scrape Stale Salon Profiles", "AI Generates 30-Day Refresh", "Render Side-by-Side Preview", "One-Click Manager Invite"],
-      "subject_line": "Your competitors post weekly. Yours hasn't in 8 months.",
-      "delivers": ["Vertical-specific content (treatments, seasons)", "4 weekly posts auto-drafted", "Customer Q&A drafted answers", "Priced service catalog", "Curated photo selection"],
-      "wins": ["Vertical content beats generic tools", "Output where customers already search", "One-click manager invite = fastest activation", "No new traffic needed", "Recurring weekly posting"],
-      "before_label": "Stale Salon GBP",
-      "before_bullets": ["No posts in 8+ months", "Customer questions unanswered", "No priced service catalog", "Last photo over a year old", "Active competitors win 'near me'"],
-      "after_label": "The SalonGBP Platform",
-      "after_bullets": ["Weekly posts in salon language", "Drafted answers to every Q", "Complete priced service catalog", "Curated, current photos", "One-click manager-invite activation"],
-      "why_works": "Search 'hair salon near me' in any city — most listings haven't posted in months, are missing prices, and have unanswered questions. That gap is the market."
+      "description": "B2B sales teams buy lead lists where 30–50% of contacts no longer work there — wasted dials, wasted SDR hours, wasted ad spend on dead emails. Upload a CSV; AI calls each contact and confirms they still work at the company. Cleaned list delivered by morning. $5 per confirmed live contact, dead ones free. Markets: AU, UK, UAE, Singapore.",
+      "flow": ["Upload Raw Lead CSV", "AI Calls Every Contact Overnight", "Confirm or Mark As Dead", "Cleaned CSV Delivered by Morning"],
+      "subject_line": "30–50% of your purchased leads are dead. We'll prove it overnight.",
+      "delivers": ["AI voice verification per contact", "Live/dead/voicemail classification", "Title + employment confirmation", "Cleaned CSV delivered by morning", "$5 per live contact, dead ones free"],
+      "wins": ["Pay-per-confirmed-contact removes all buyer risk", "Overnight turnaround beats every alternative", "Markets: AU, UK, UAE, Singapore", "SDR teams already know the pain", "Recurring usage every list refresh"],
+      "before_label": "Dead Lead List Drag",
+      "before_bullets": ["30–50% of contacts no longer work there", "SDRs burn hours on dead dials", "Bounce rates wreck domain reputation", "Wasted ad spend on stale emails", "Ops can't trust the pipeline numbers"],
+      "after_label": "The List Liquidator Platform",
+      "after_bullets": ["AI calls every contact overnight", "Live/dead status per row", "Cleaned CSV in your inbox by morning", "$5/live contact, dead ones free", "Domain + dial rep protected"],
+      "why_works": "Pay-per-confirmed-contact removes every objection. The buyer only pays for value verified — overnight."
     }
   ]
 }

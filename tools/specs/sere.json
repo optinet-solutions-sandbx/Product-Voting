@@ -1,0 +1,63 @@
+{
+  "person": {
+    "slug": "sere",
+    "name": "Sere",
+    "role": "SMB Reputation + Ops"
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "Auto-Reputation Manager",
+      "tagline": "AI Review Reply Manager for Small Businesses",
+      "category": "Reputation",
+      "color": "blue",
+      "impact": "High",
+      "description": "Small businesses sit on dozens of unanswered Google, Yelp, and Facebook reviews — every silent star drags discovery and trust. Auto-Reputation Manager scans every review surface, AI drafts a professional reply per review, and suggests the right operational fix (refund, apology, promo). Owner picks auto-post or approval flow. ₱500–2,000/mo subscription.",
+      "flow": ["Scan Google + Yelp + FB Reviews", "AI Drafts Reply Per Review", "Suggest Fix (Refund / Apology / Promo)", "Auto-Post or Owner Approval"],
+      "subject_line": "You have 23 reviews waiting for a reply. Here's the first batch.",
+      "delivers": ["Multi-platform review scan", "AI-drafted professional replies", "Operational fix suggestions", "Auto-post or approval workflow", "Reputation lift dashboard"],
+      "wins": ["Hands-off review reply at scale", "Approval flow keeps owner in control", "Recurring SaaS at SMB-friendly price", "Visible problem — fast close", "Cross-platform on one tool"],
+      "before_label": "Reviews Going Silent",
+      "before_bullets": ["Dozens of unanswered reviews", "Owner overwhelmed, never replies", "Negative reviews go unaddressed", "Trust signals decay over months", "Discovery rank quietly drops"],
+      "after_label": "The Auto-Reputation Manager",
+      "after_bullets": ["Every review answered professionally", "Operational fixes suggested", "Owner approves or auto-posts", "Reputation lift visible monthly", "Recurring SaaS at SMB-friendly price"],
+      "why_works": "A visible, embarrassing problem with a fast, professional fix. Owners say yes the moment they see the unread queue."
+    },
+    {
+      "n": 2,
+      "title": "Auto-Follow-Up",
+      "tagline": "Win-Back Automation for Lapsed Customers",
+      "category": "Retention",
+      "color": "orange",
+      "impact": "High",
+      "description": "Most SMBs never follow up — customers who didn't return, bookings that never finished, abandoned carts. Auto-Follow-Up tracks every lapse, then sends 'we miss you' sequences with discount offers via SMS, WhatsApp, and Email. Triggers on inactivity windows, abandoned bookings, or stalled checkouts. Subscription + usage-based pricing.",
+      "flow": ["Track Lapsed Customers + Carts", "AI Generates Win-Back Sequence", "Send via SMS / WhatsApp / Email", "Recover Booking or Sale"],
+      "subject_line": "Your last visit was 6 months ago. Come back?",
+      "delivers": ["Lapse detection across surfaces", "AI-personalized win-back copy", "Multi-channel: SMS + WhatsApp + Email", "Discount offer logic", "Recovered-revenue dashboard"],
+      "wins": ["Recovers known-good past customers", "Multi-channel: SMS, WhatsApp, Email", "Subscription + usage-based pricing", "Direct revenue lift = easy sale", "Works across SMB verticals"],
+      "before_label": "Lapsed Customers Forgotten",
+      "before_bullets": ["No follow-up after a missed visit", "Abandoned bookings never recovered", "Cart abandonment goes uncontacted", "Owner has no time for win-backs", "Lost revenue invisible to the books"],
+      "after_label": "The Auto-Follow-Up Platform",
+      "after_bullets": ["Lapses tracked automatically", "AI-personalized win-back sequences", "Multi-channel reach via SMS + WhatsApp + Email", "Discount offers triggered on inactivity", "Recovered revenue visible monthly"],
+      "why_works": "Past customers convert 5–10× cheaper than cold ones. Automating the nudge turns a forgotten list into recurring revenue."
+    },
+    {
+      "n": 3,
+      "title": "Inventory Restock Predictor",
+      "tagline": "Auto-Inventory Restock Predictor for Small Shops",
+      "category": "Retail Ops",
+      "color": "green",
+      "impact": "High",
+      "description": "Small retail (sari-sari stores, mini marts, cafés, pharmacies) constantly stock out and over-order — owners track inventory in their head or in a notebook. Inventory Restock Predictor connects via POS, a simple daily input app, or receipt photo scanning. AI builds a real-time model of what's selling, predicts when items will run out, suggests what to restock and when, and auto-drafts the supplier order. Monthly subscription per store plus supplier affiliate cuts.",
+      "flow": ["Connect POS / Daily Input / Receipt Photo", "AI Builds Real-Time Sell-Through Model", "Predict Stockouts + Suggest Restock", "Auto-Draft Supplier Order"],
+      "subject_line": "Coke Zero will run out in 3 days — reorder 5 cases.",
+      "delivers": ["POS / receipt photo / manual ingest", "Real-time sell-through model", "Stockout predictions per SKU", "Auto-drafted supplier orders", "Supplier affiliate marketplace"],
+      "wins": ["No POS required — receipt photos work", "Auto-drafted supplier orders before stockout", "Subscription + supplier affiliate revenue", "Universal SMB retail pain", "Stops stockouts and over-ordering at once"],
+      "before_label": "Notebook Inventory",
+      "before_bullets": ["Owner tracks stock in their head", "Frequent stockouts on bestsellers", "Over-ordering on slow movers", "No data on sell-through", "Supplier orders placed in panic"],
+      "after_label": "The Inventory Restock Platform",
+      "after_bullets": ["Sell-through tracked in real time", "Stockout predicted days in advance", "Restock suggestions per SKU", "Supplier orders auto-drafted", "Subscription + affiliate revenue stack"],
+      "why_works": "Stockouts cost sales the owner never sees. A 3-day-ahead warning plus a one-tap supplier order is undeniable value at SMB price."
+    }
+  ]
+}

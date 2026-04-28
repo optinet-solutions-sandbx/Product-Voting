@@ -1,8 +1,8 @@
 /* Real submitters for the Weekend Challenge.
+   11 teammates × 3 products = 33 ideas. All cleared, no duplicates.
    When a person's images are generated and dropped into assets/img/<slug>/,
    they are surfaced in the lightbox. The unexpanded card is built from the
    per-idea bullets/teaser/subjectLine fields below.
-   Slot 10 is held for the last submission still pending.
 
    `email` is used to recognize a submitter when they sign in, so their own
    ideas are hidden from them on the ballot. Adjust if any submitter logs in
@@ -52,15 +52,7 @@ window.SUBMITTERS = [
     pending: false,
     ideas: [
       {
-        id: "ianjay-01", title: "CompetitorScope", tagline: "Real-Time Competitor Intelligence for iGaming",
-        category: "iGaming Intelligence",
-        teaser: "Daily scraping of competitor bonuses, VIP tiers, payment changes, and landing-page edits across 25 competitors — delivered as a weekly intel brief plus Slack alerts.",
-        bullets: ["100% reuse of existing scraper", "Cold email IS the demo", "Recurring SaaS at mid-ticket"],
-        subjectLine: "Here's what your top 5 competitors changed this week.",
-        image: "assets/img/ianjay/1.webp", impact: "High"
-      },
-      {
-        id: "ianjay-02", title: "AffiliateGuard+", tagline: "Compliance + Lost-Revenue Audit for iGaming Affiliates",
+        id: "ianjay-affiliate", title: "AffiliateGuard+", tagline: "Compliance + Lost-Revenue Audit for iGaming Affiliates",
         category: "Compliance",
         teaser: "Scrapes every affiliate page promoting the brand. Scores compliance violations and dead-link revenue leaks. Two budget holders unlocked on one email — Compliance and CMO.",
         bullets: ["Two buyers in one email", "Quantified lost-revenue figure", "Shortest sales cycle of the three"],
@@ -68,12 +60,20 @@ window.SUBMITTERS = [
         image: "assets/img/ianjay/2.webp", impact: "High"
       },
       {
-        id: "ianjay-03", title: "GeoGen+", tagline: "Per-Geo Landing Pages + Per-Streamer Branded Pages",
+        id: "ianjay-geo", title: "GeoGen+", tagline: "Per-Geo Landing Pages + Per-Streamer Branded Pages",
         category: "Performance Marketing",
         teaser: "Generates geo/language variants, bonus-specific pages, and per-streamer branded pages on the same engine. Speaks to Performance Marketing AND Affiliate heads.",
-        bullets: ["Highest leverage of existing engine", "Per-streamer axis = enterprise SKU", "Speaks to two heads at the operator"],
+        bullets: ["Highest leverage of existing engine", "Per-streamer axis = €7.5–10K/mo enterprise SKU", "Speaks to two heads at the operator"],
         subjectLine: "10 ready-to-launch landing pages for your top 5 markets.",
         image: "assets/img/ianjay/3.webp", impact: "High"
+      },
+      {
+        id: "ianjay-permit", title: "PermitProfit", tagline: "Building-Permit-Triggered Marketing Kit for General Contractors",
+        category: "Local Services",
+        teaser: "Scrapes daily building-permit filings from public municipal databases (US/UK/EU). AI generates a per-project marketing kit: project landing page, ZIP-code postcard, Meta + Nextdoor ad creative, customer-testimonial template, referral email drip. Cold email contains a live preview link to a fully-built page for the contractor's actual newest permit.",
+        bullets: ["Fresh trigger — permit just filed (zero competition)", "€500/project or €2,500/mo unlimited — corporate-card price", "Live preview of contractor's actual permit in cold email"],
+        subjectLine: "A new permit just filed in your ZIP — here's the marketing kit, ready.",
+        image: "assets/img/ianjay/1.webp", impact: "High"
       }
     ]
   },
@@ -83,31 +83,31 @@ window.SUBMITTERS = [
     id: "revo",
     name: "Revo",
     email: "revo@optinetsolutions.com",
-    role: "Web Platform",
+    role: "Social Media Tooling",
     pending: false,
     ideas: [
       {
-        id: "revo-01", title: "InstantSite Library", tagline: "Pre-Built Website Platform for Small Businesses",
-        category: "Web Platform",
-        teaser: "Library of pre-designed websites for small businesses. Edit via dashboard. Auto-pulls Google Maps reviews. Mobile + SEO ready. Live in minutes, not months.",
-        bullets: ["Removes complexity barrier", "Speed = adoption", "Existing reviews = built-in credibility"],
-        subjectLine: "Your business deserves a website. Here's one — already built.",
-        image: "assets/img/revo/1.webp", impact: "High"
+        id: "revo-hash", title: "Hashtag Finder", tagline: "AI Hashtag Discovery for Social Media Reach",
+        category: "Social Media",
+        teaser: "Identifies and suggests the most effective hashtags for each post to expand reach beyond current followers. Posts surface in searches and feeds across Facebook, TikTok, and Instagram. Helps small accounts grow organically.",
+        bullets: ["Reach beyond current followers", "Cross-platform: FB, TikTok, IG", "Plugs into existing posting workflow"],
+        subjectLine: "Your last 10 posts used the same 5 hashtags. Here's what's working now.",
+        image: "assets/img/revo/1.webp", impact: "Medium"
       },
       {
-        id: "revo-02", title: "ClaimYourSite", tagline: "Pre-Built Site, One-Click Adoption",
-        category: "Lead Generation",
-        teaser: "Scrape Google Maps for businesses without websites. AI builds a single-page site from scraped data. Owner just clicks 'claim' — yes/no is the only first decision.",
-        bullets: ["Zero upfront effort for the buyer", "Yes/no is the only first decision", "Natural upsell path post-claim"],
-        subjectLine: "Your website is ready. Click to claim it.",
-        image: "assets/img/revo/2.webp", impact: "High"
+        id: "revo-promo", title: "Promo Page Generator", tagline: "One-Click Landing Pages for Local Business Promotions",
+        category: "Marketing",
+        teaser: "Owner inputs promo title, details, duration → AI generates a ready-to-use landing page (e.g., '50% Off This Weekend') for sharing on Facebook and Instagram. Launch promotions without a developer. Recurring revenue per promo.",
+        bullets: ["No developer needed — owner self-serves", "Per-promo recurring revenue", "FB/IG share-ready out of the box"],
+        subjectLine: "Launch your weekend promo with one click — landing page included.",
+        image: "assets/img/revo/2.webp", impact: "Medium"
       },
       {
-        id: "revo-03", title: "ReputationLift", tagline: "Reputation & Review Boosting Add-On",
-        category: "Reputation",
-        teaser: "Layer that improves online reputation across Google Maps and review platforms. Combines with the website offer for a complete online presence.",
-        bullets: ["More reviews = more customers", "Trust signals stack with website offer", "Owners care about exposure first"],
-        subjectLine: "Your competitors have more reviews. Let's fix that.",
+        id: "revo-content", title: "AI Social Content Generator", tagline: "Daily Caption + Hashtag + Content Plan for SMBs",
+        category: "Content",
+        teaser: "Generates ready-to-post content using scraped business details. Captions, hashtag suggestions, image/video ideas, weekly content plan tailored for Instagram and TikTok. Removes the 'what should I post?' blocker. (Owner executes; distinct from John's done-for-you Faceless Video Studio.)",
+        bullets: ["Daily content plan auto-generated", "Captions + hashtags + visual prompts", "Removes the 'what should I post?' blocker"],
+        subjectLine: "Tomorrow's posts, written. Hashtags, picked. Just hit publish.",
         image: "assets/img/revo/3.webp", impact: "Medium"
       }
     ]
@@ -138,11 +138,11 @@ window.SUBMITTERS = [
         image: "assets/img/jas/2.webp", impact: "High"
       },
       {
-        id: "jas-03", title: "SalonGBP", tagline: "Vertical-Native GBP Manager for Salons & Barbershops",
-        category: "Local SEO",
-        teaser: "Stale Google Business Profiles for salons. Auto-generates 30-day refresh: 4 weekly posts, drafted answers, priced services, photos. One-click manager invite.",
-        bullets: ["Vertical content beats generic tools", "Output where customers already search", "One-click manager invite = fastest activation"],
-        subjectLine: "Your competitors post weekly. Yours hasn't in 8 months.",
+        id: "jas-list", title: "List Liquidator", tagline: "AI-Verified Lead List Cleaning for B2B Sales Teams",
+        category: "B2B Sales",
+        teaser: "Sales teams buy lead lists where 30-50% of contacts are dead. Upload a CSV; AI calls each contact to confirm they still work there. Cleaned list back by morning. $5 per confirmed live contact, dead ones free. Markets: AU, UK, UAE, Singapore.",
+        bullets: ["Pay-per-confirmed-contact removes all buyer risk", "$5/live contact in AU, UK, UAE, Singapore", "Cleaned CSV back by morning — no waiting"],
+        subjectLine: "30–50% of your purchased leads are dead. We'll prove it overnight.",
         image: "assets/img/jas/3.webp", impact: "High"
       }
     ]
@@ -159,8 +159,8 @@ window.SUBMITTERS = [
       {
         id: "cathy-01", title: "ThreatScope", tagline: "1-Page Competitor Threat Analysis",
         category: "Marketing",
-        teaser: "Scrape target + top 3 local competitors. Pull reviews, promos, social posts. AI generates a 1-page Threat Analysis + counter-strategy. Cold email delivers the report as the hook.",
-        bullets: ["Cold email IS the demo", "Locally relevant, named competitors", "AI counter-strategy is actionable"],
+        teaser: "Scrape target + top 3 local competitors. Pull reviews, promos, social posts. AI generates a 1-page Threat Analysis + counter-strategy. Cold email delivers the report as the hook. iGaming version tracks 25 competitors at a higher tier.",
+        bullets: ["Cold email IS the demo", "Locally relevant, named competitors", "iGaming enterprise SKU on top"],
         subjectLine: "I ran an automated analysis on your top 3 competitors.",
         image: "assets/img/cathy/1.webp", impact: "High"
       },
@@ -192,25 +192,25 @@ window.SUBMITTERS = [
     pending: false,
     ideas: [
       {
-        id: "ralph-01", title: "RevenueLeak Audit", tagline: "5-Leak Conversion Audit for Local Businesses",
+        id: "ralph-01", title: "Revenue Leak Audit", tagline: "5-Leak Conversion Audit for Local Businesses",
         category: "Local Audit",
-        teaser: "Scans Google Business, Facebook, public presence. AI detects 5 specific conversion leaks. €20-50 per audit, €50-150 for done-for-you fixes.",
+        teaser: "Scans Google Business, Facebook, public web presence. Delivers a 5-leak report with exact fixes for missed replies, weak profiles, no CTAs, no follow-up systems. €20-50 per audit, €50-150 for done-for-you fixes.",
         bullets: ["Direct ROI from existing traffic", "No behavior change required", "Path to recurring SaaS"],
         subjectLine: "I'll show you 3 ways you're currently losing customers — free preview.",
         image: "assets/img/ralph/1.webp", impact: "High"
       },
       {
-        id: "ralph-02", title: "AI Phone Agent", tagline: "24/7 AI Voice Receptionist for Local Services",
-        category: "Voice AI",
-        teaser: "Plumbers, HVAC, dentists miss €100-500+ jobs every day. AI answers instantly, qualifies leads, captures details, books or forwards. €50-150/mo subscription.",
-        bullets: ["Missed calls = lost revenue (clear ROI)", "High-value leads (€100-500+)", "Visible business impact in week one"],
-        subjectLine: "Quick question — are you able to answer every call that comes in?",
+        id: "ralph-ghost", title: "Ghost Job Detector", tagline: "Recover Unbilled Revenue from Completed Jobs",
+        category: "Revenue Recovery",
+        teaser: "Scans WhatsApp, SMS, email, and call logs for plumbers, electricians, contractors, repair services. AI detects completed-but-unbilled jobs by parsing 'done', 'fixed', 'finished' and cross-checking against invoices/CRM. Auto-generates draft invoices.",
+        bullets: ["Emotional hook — 'you worked for free'", "Free-scan demo lands in cold email", "€50–150/mo or % of recovered revenue"],
+        subjectLine: "You completed 7 jobs last month that were never invoiced.",
         image: "assets/img/ralph/2.webp", impact: "High"
       },
       {
-        id: "ralph-03", title: "ReviewBoost", tagline: "Consistent 5-Star Review Generation for SMBs",
+        id: "ralph-03", title: "Reviews Booster", tagline: "Consistent 5-Star Review Generation for SMBs",
         category: "Reputation",
-        teaser: "Direct review link + QR code. Ready-to-use templates. AI-personalized timed follow-ups. €5-20/mo or €20-50 one-time setup.",
+        teaser: "Direct review link + QR code. Ready-to-use templates. AI-personalized timed follow-ups. Tone optimization over time. €5-20/mo or €20-50 one-time setup.",
         bullets: ["More reviews = more visibility = more customers", "Easy to sell to almost any business", "Fast, visible results"],
         subjectLine: "Your reviews are great — but you could be getting more.",
         image: "assets/img/ralph/3.webp", impact: "Medium"
@@ -218,37 +218,37 @@ window.SUBMITTERS = [
     ]
   },
 
-  /* ============================ CIRI ================================ */
+  /* ============================ SERE ================================ */
   {
-    id: "ciri",
-    name: "Ciri",
-    email: "cirilo@optinetsolutions.com",
-    role: "Local Business Automation",
+    id: "sere",
+    name: "Sere",
+    email: "sere@optinetsolutions.com",
+    role: "SMB Reputation + Ops",
     pending: false,
     ideas: [
       {
-        id: "ciri-01", title: "ReviewBooster AI", tagline: "Reviews → Testimonials, Posts, and Insight",
-        category: "Content + Reputation",
-        teaser: "AI scrapes reviews from Google Maps + Yelp. Extracts themes. Auto-generates testimonials, social posts, email campaigns. Subscription tier scales by location.",
-        bullets: ["Hands-off content engine", "Reviews already exist (no new asks)", "Multi-channel output from one source"],
-        subjectLine: "Your reviews say a lot. Let's turn them into revenue.",
-        image: "assets/img/ciri/1.webp", impact: "High"
+        id: "sere-01", title: "Auto-Reputation Manager", tagline: "AI Review Reply Manager for Small Businesses",
+        category: "Reputation",
+        teaser: "Scans Google Maps, Yelp, Facebook for unanswered reviews. AI generates professional replies and suggests fixes (refund, apology, promo). Auto-post or approval flow. ₱500–2,000/mo subscription.",
+        bullets: ["Hands-off review reply at scale", "Approval flow keeps owner in control", "Recurring SaaS at SMB-friendly price"],
+        subjectLine: "You have 23 reviews waiting for a reply. Here's the first batch.",
+        image: "assets/img/sere/1.webp", impact: "High"
       },
       {
-        id: "ciri-02", title: "MissedCall Monetizer", tagline: "Lost Calls → Bookings, Automatically",
-        category: "Conversion",
-        teaser: "Track missed calls via call forwarding. Auto-send SMS reply + AI chatbot link. Auto-create a booking page if they don't have one. Recovers lost revenue.",
-        bullets: ["Clear ROI = easy sale", "Recovers lost revenue immediately", "Booking page auto-built"],
-        subjectLine: "You missed 14 calls last week. Here's what happened to them.",
-        image: "assets/img/ciri/2.webp", impact: "High"
+        id: "sere-02", title: "Auto-Follow-Up", tagline: "Win-Back Automation for Lapsed Customers",
+        category: "Retention",
+        teaser: "Tracks customers who didn't return or didn't complete booking. Auto-sends 'we miss you' sequences with discount offers via SMS, WhatsApp, Email. Subscription + usage-based pricing.",
+        bullets: ["Recovers known-good past customers", "Multi-channel: SMS, WhatsApp, Email", "Subscription + usage-based pricing"],
+        subjectLine: "Your last visit was 6 months ago. Come back?",
+        image: "assets/img/sere/2.webp", impact: "High"
       },
       {
-        id: "ciri-03", title: "Local SEO Autopilot", tagline: "Set-and-Forget Local Ranking Engine",
-        category: "Local SEO",
-        teaser: "Detects businesses with poor SEO. Auto-generates SEO sites, publishes local blog posts, updates GBP. Set-and-forget local ranking.",
-        bullets: ["Set-and-forget = low effort sale", "Local ranking = direct customers", "Recurring SaaS pricing"],
-        subjectLine: "You're #14 for 'plumber near me'. Want to be #2?",
-        image: "assets/img/ciri/3.webp", impact: "High"
+        id: "sere-03", title: "Inventory Restock Predictor", tagline: "Auto-Inventory Restock Predictor for Small Shops",
+        category: "Retail Ops",
+        teaser: "Connects to small retail (sari-sari, mini marts, cafés, pharmacies) via POS, daily input app, or receipt photo scan. AI predicts when items run out, suggests what to restock and when, and auto-generates supplier orders. Monthly subscription per store + supplier affiliate cuts.",
+        bullets: ["No POS required — receipt photos work", "Auto-drafted supplier orders before stockout", "Subscription + supplier affiliate revenue"],
+        subjectLine: "Coke Zero will run out in 3 days — reorder 5 cases.",
+        image: "assets/img/sere/3.webp", impact: "High"
       }
     ]
   },
@@ -297,17 +297,17 @@ window.SUBMITTERS = [
     pending: false,
     ideas: [
       {
-        id: "ivan-01", title: "DentalDesk", tagline: "AI Voice Receptionist + CRM for Cebu Dental Clinics",
-        category: "Healthcare",
-        teaser: "AI voice agent eliminates missed calls, handles patient FAQs, books 24/7. Bundled with a personal CRM and portal website. End-to-end front-desk coverage.",
-        bullets: ["Localized to Cebu (specific market)", "CRM + voice + portal bundle", "High clinic willingness to pay"],
-        subjectLine: "Stop missing calls. Stop losing patients.",
+        id: "ivan-01", title: "DentalDesk", tagline: "AI Voice Receptionist + CRM + Portal for Local Service Businesses",
+        category: "Local Services",
+        teaser: "Originally for Cebu dental clinics — now expanded to plumbers, salons, restaurants, electricians, HVAC. AI voice agent eliminates missed calls, handles FAQs, books 24/7. Bundled with CRM and portal website. End-to-end front-desk coverage.",
+        bullets: ["Vertical-agnostic — works across local services", "CRM + voice + portal bundle in one offer", "High SMB willingness to pay"],
+        subjectLine: "Stop missing calls. Stop losing customers.",
         image: "assets/img/ivan/1.webp", impact: "High"
       },
       {
         id: "ivan-02", title: "Bureaucracy Buffer", tagline: "Document Renewal Workflow for Recurring Permits",
         category: "Government Tech",
-        teaser: "Document Expiry workflow. LLM parses renewal requirements, pre-fills known data into a checklist 30 days before deadline. Extensible to local government partnerships.",
+        teaser: "LLM parses renewal requirements (e.g., 'recent ID photo + clearance'). Pre-fills known data into a checklist 30 days before deadline. Recurring permits, vehicle registrations, pro license renewals. Extensible to LGU partnerships.",
         bullets: ["Universal pain — everyone has docs", "LLM-parsed requirements scale", "Government partnership upside"],
         subjectLine: "Your driver's license expires in 30 days. Here's the checklist.",
         image: "assets/img/ivan/2.webp", impact: "Medium"
@@ -348,12 +348,12 @@ window.SUBMITTERS = [
         image: "assets/img/john/2.webp", impact: "High"
       },
       {
-        id: "john-03", title: "Airbnb Optimizer", tagline: "Done-For-You Listing Rewrite + Smart Pricing",
-        category: "Travel",
-        teaser: "Rewrite copy. AI-enhance photos. Build smart pricing from market comps. Install auto guest messaging. $247/listing + $97/mo for underperforming Airbnb hosts.",
-        bullets: ["Direct revenue lift = easy sale", "$247 one-time + $97/mo recurring", "Clear before/after comparison"],
-        subjectLine: "Your Airbnb is underbooking. Here's why — and how to fix it.",
-        image: "assets/img/john/3.webp", impact: "Medium"
+        id: "john-menu", title: "MenuLift", tagline: "AI Menu Optimizer for Independent Restaurants in Tourist Areas",
+        category: "Restaurant Tech",
+        teaser: "Scrapes menus from Facebook, Google Maps, or delivery apps. AI rewrites descriptions, reorders dishes by margin, applies psychological pricing, and translates into 5 tourist languages (English, Korean, Mandarin, Japanese, Spanish). Delivered as a printable PDF in the cold email. ₱9,900 one-time.",
+        bullets: ["Empty competitive lane in tourist-zone restaurants", "₱9,900 impulse price — walk-in closeable", "PDF preview in the cold email = the demo"],
+        subjectLine: "Your menu — rewritten, repriced, translated for tourists.",
+        image: "assets/img/john/3.webp", impact: "High"
       }
     ]
   },
@@ -367,7 +367,7 @@ window.SUBMITTERS = [
     pending: false,
     ideas: [
       {
-        id: "chris-01", title: "ListingRewriter", tagline: "Multilingual Listing Optimizer for Hotels & B&Bs",
+        id: "chris-01", title: "Listing Optimizer", tagline: "Multilingual Listing Optimizer for Hotels & B&Bs",
         category: "Hospitality",
         teaser: "Scrape independent hotels and B&Bs with weak Booking/Airbnb listings — single language, thin descriptions, low scores. AI rewrites the listing in 8–12 languages and flags photo issues. Cold email contains the rewritten listing side-by-side.",
         bullets: ["Massive willingness to pay — one extra booking pays the year", "Pan-European market across small hotels + B&Bs", "Untouched vertical — no one else on the team is pitching it"],
@@ -375,7 +375,7 @@ window.SUBMITTERS = [
         image: "assets/img/chris/1.webp", impact: "High"
       },
       {
-        id: "chris-02", title: "ProfileScore", tagline: "Audit-Score GBP Fix for Local Businesses",
+        id: "chris-02", title: "GBP Fixer (Audit Score)", tagline: "Audit-Score GBP Fix for Local Businesses",
         category: "Local SEO",
         teaser: "Reuse our Google Maps pipeline. Score every business's GBP on a 0–100 scale. For low scorers, AI generates the full fix: optimized description, 10 GBP posts, Q&A answers, correct category, photo prompts.",
         bullets: ["Scoreboard hook — opens at 60%+", "Fastest to build (3 days from existing stack)", "Cleanest extension of what we already have"],
@@ -383,7 +383,7 @@ window.SUBMITTERS = [
         image: "assets/img/chris/2.webp", impact: "High"
       },
       {
-        id: "chris-03", title: "SiteSwap", tagline: "Side-by-Side Modern Redesign for Outdated Business Sites",
+        id: "chris-03", title: "Website Redesign", tagline: "Side-by-Side Modern Redesign for Outdated Business Sites",
         category: "Web Modernization",
         teaser: "Biggest TAM of the three. Scrape Google Maps for businesses with old, slow, or non-mobile sites. AI generates a modern replacement using their existing content. Cold email contains a side-by-side screenshot — their site today vs. ours.",
         bullets: ["Biggest TAM of the three", "Reuses the entire existing stack — flips the filter from no-website to ugly-website", "Side-by-side screenshot is undeniable in the inbox"],

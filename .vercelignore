@@ -5,6 +5,7 @@ workflows/
 
 # Internal docs — kept in repo, not served publicly
 WEEKEND_CHALLENGE_IDEAS.md
+final_lineup_master.md
 
 # Secrets + dev
 .env

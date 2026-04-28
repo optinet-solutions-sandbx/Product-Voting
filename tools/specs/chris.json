@@ -7,7 +7,7 @@
   "products": [
     {
       "n": 1,
-      "title": "ListingRewriter",
+      "title": "Listing Optimizer",
       "tagline": "Multilingual Listing Optimizer for Hotels & B&Bs",
       "category": "Hospitality",
       "color": "blue",
@@ -19,13 +19,13 @@
       "wins": ["One extra booking pays the year", "Pan-European TAM, untouched on the team", "Massive willingness to pay", "Direct, measurable revenue uplift", "Clear before/after for the buyer"],
       "before_label": "Single-Language Listing",
       "before_bullets": ["English-only listing in non-English markets", "Generic copy nobody reads", "Photos washed out + out of order", "Low review-score visibility", "Underbooked vs. comparable units"],
-      "after_label": "The ListingRewriter Platform",
+      "after_label": "The Listing Optimizer Platform",
       "after_bullets": ["8–12 languages, native phrasing", "AI-optimized title + descriptions", "Flagged photo fixes + reorder", "Side-by-side preview in the cold email", "Measurable booking lift in 30 days"],
       "why_works": "Independents underbook because their listing speaks one language to a multilingual market. We translate the whole funnel."
     },
     {
       "n": 2,
-      "title": "ProfileScore",
+      "title": "GBP Fixer (Audit Score)",
       "tagline": "Audit-Score GBP Fix for Local Businesses",
       "category": "Local SEO",
       "color": "orange",
@@ -37,13 +37,13 @@
       "wins": ["Scoreboard hook opens at 60%+", "Fastest to build (3 days from existing stack)", "Cleanest extension of what we already have", "Immediate visible value in the cold email", "Universal SMB pain"],
       "before_label": "Stale GBP, Score 31/100",
       "before_bullets": ["Outdated description + wrong category", "No GBP posts in 6+ months", "Empty Q&A section", "Photos older than 18 months", "Low local-pack visibility"],
-      "after_label": "The ProfileScore Platform",
+      "after_label": "The GBP Fixer Platform",
       "after_bullets": ["Audit score + line-by-line breakdown", "AI rewrite of description + category", "10 ready-to-publish GBP posts", "Q&A drafted, photos prompted", "Visible local-pack lift in weeks"],
       "why_works": "A 0–100 score is undeniable in an inbox. Pair it with the fix already drafted and the buyer just clicks publish."
     },
     {
       "n": 3,
-      "title": "SiteSwap",
+      "title": "Website Redesign",
       "tagline": "Side-by-Side Modern Redesign for Outdated Business Sites",
       "category": "Web Modernization",
       "color": "green",
@@ -55,7 +55,7 @@
       "wins": ["Biggest TAM of the three", "Reuses the entire current stack", "Side-by-side screenshot is undeniable", "Flips filter from no-website to ugly-website", "Low-friction yes/no decision"],
       "before_label": "Outdated 2010s Website",
       "before_bullets": ["Slow load (6s+) on mobile", "Not responsive — pinch to zoom", "Broken contact form or no CTA", "Hideous typography + stock images", "Lost trust before any sale"],
-      "after_label": "The SiteSwap Platform",
+      "after_label": "The Website Redesign Platform",
       "after_bullets": ["Modern responsive design", "Existing content auto-migrated", "Mobile-first, sub-2s load", "Clean CTA + working contact form", "Pre-built — owner just clicks claim"],
       "why_works": "A side-by-side image of their site beside the modern one we already built makes the decision visual, not abstract."
     }
