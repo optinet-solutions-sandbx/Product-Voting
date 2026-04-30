@@ -73,7 +73,7 @@
     return {
       success: true,
       closed: true,
-      reason: "all_voted",
+      reason: "deadline",
       totalBallots: 11,
       expected: 11,
       winners
